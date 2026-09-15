@@ -140,7 +140,7 @@ export default function PremiumPage() {
 
             <div className="text-left md:min-w-[190px] md:text-center">
               <div className="text-5xl font-semibold tracking-tight text-[#f4f8ff]">
-                ₹700
+                ₹350
               </div>
 
               <p className="mt-2 text-sm text-[#8198ad]">per 30 days</p>

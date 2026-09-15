@@ -98,7 +98,9 @@ export default function PricingPage() {
 
               <div className="mt-6 flex items-end gap-3">
                 <span className="bg-gradient-to-r from-[#f7fbff] to-[#cfefff] bg-clip-text text-5xl font-semibold text-transparent">
-                  ₹700
+                  ₹350
+                </span>
+                <span className="text-2xl font-medium text-[#73d9eb] line-through">
                 </span>
                 <span className="pb-1 text-[#8198ad]">/ 30 days</span>
               </div>
