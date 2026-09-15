@@ -75,7 +75,7 @@ export default function RefundsPage() {
             </p>
 
             <p className="mt-4 text-xl font-semibold text-[#d0b16b]">
-              ₹700 for 30 days of Premium access.
+              ₹350 for 30 days of Premium access.
             </p>
 
             <p className="mt-4">

@@ -229,7 +229,7 @@ export default function PremiumPage() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-xl leading-7 text-[#9eb6ca]">
-            Get Quill & Ink Premium for ₹700 and unlock 30 days of advanced
+            Get Quill & Ink Premium for ₹350 and unlock 30 days of advanced
             features for your server.
           </p>
 

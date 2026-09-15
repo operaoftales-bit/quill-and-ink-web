@@ -350,7 +350,7 @@ export default function Home() {
                     </p>
 
                     <p className="mt-3 bg-gradient-to-r from-[#f4fbfd] via-[#aee9f3] to-[#d8b96f] bg-clip-text font-serif text-5xl font-semibold text-transparent">
-                      ₹700
+                      ₹350
                     </p>
 
                     <p className="mt-2 text-sm text-[#9aafbe]">

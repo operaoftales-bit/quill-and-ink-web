@@ -253,7 +253,7 @@ export default function GettingStartedPage() {
 
                 <div className="mt-7">
                   <span className="text-4xl font-semibold text-[#f4f8ff]">
-                    ₹700
+                    ₹350
                   </span>
 
                   <span className="ml-2 text-[#8198ad]">/ 30 days</span>
