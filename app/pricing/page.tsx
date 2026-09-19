@@ -1,6 +1,8 @@
 const DISCORD_INSTALL_URL =
   "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2833847071407158&integration_type=0&scope=applications.commands+bot";
 
+const DISCORD_SUPPORT_URL = "https://discord.gg/v95scy728";
+
 export default function PricingPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#061525] px-6 py-20 text-[#f4f8ff]">
@@ -52,6 +54,15 @@ export default function PricingPage() {
               className="transition hover:text-[#eafaff]"
             >
               Contact
+            </a>
+
+            <a
+              href={DISCORD_SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-[#eafaff]"
+            >
+              Support Server
             </a>
 
             <a
@@ -226,14 +237,25 @@ export default function PricingPage() {
               .
             </p>
 
-            <a
-              href={DISCORD_INSTALL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-fit rounded-full border border-[#537c95]/50 bg-[#0a1b2d]/70 px-4 py-2 text-[#dff8fc] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
-            >
-              Add to Discord
-            </a>
+            <div className="flex flex-wrap gap-3">
+              <a
+                href={DISCORD_SUPPORT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit rounded-full border border-[#537c95]/50 bg-[#0a1b2d]/70 px-4 py-2 text-[#dff8fc] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
+              >
+                Support Server
+              </a>
+
+              <a
+                href={DISCORD_INSTALL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit rounded-full border border-[#537c95]/50 bg-[#0a1b2d]/70 px-4 py-2 text-[#dff8fc] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
+              >
+                Add to Discord
+              </a>
+            </div>
           </div>
         </footer>
 

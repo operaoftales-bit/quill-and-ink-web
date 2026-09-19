@@ -275,18 +275,31 @@ export default function RefundsPage() {
             </p>
           </section>
 
-          <section>
-            <h2 className="text-2xl font-semibold text-[#f1f7ff]">
-              <span className="mr-2 text-[#73d9eb]">✦</span>
-              10. Contact
-            </h2>
+         <section>
+  <h2 className="text-2xl font-semibold text-[#f1f7ff]">
+    <span className="mr-2 text-[#73d9eb]">✦</span>
+    10. Contact
+  </h2>
 
-            <p className="mt-4">
-              If you believe you have experienced a payment problem, duplicate
-              charge, or other issue relating to Premium, please contact us
-              using the contact information provided on this website.
-            </p>
-          </section>
+  <p className="mt-4">
+    If you believe you have experienced a payment problem, duplicate
+    charge, or other issue relating to Premium, please contact us
+    using the contact information provided on this website.
+  </p>
+
+  <p className="mt-4">
+    You may also join our{" "}
+    <a
+      href="https://discord.gg/v95scy728"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-[#73d9eb] transition hover:text-[#d0b16b]"
+    >
+      Support Server
+    </a>{" "}
+    on Discord for assistance.
+  </p>
+</section>
 
           <section>
             <h2 className="text-2xl font-semibold text-[#f1f7ff]">

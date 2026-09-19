@@ -1,6 +1,8 @@
 const DISCORD_INSTALL_URL =
   "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2833847071407158&integration_type=0&scope=applications.commands+bot";
 
+const DISCORD_SUPPORT_URL = "https://discord.gg/v95scy728";
+
 const features = [
   {
     title: "Moderation",
@@ -106,6 +108,15 @@ export default function Home() {
             >
               Contact
             </a>
+
+            <a
+              href={DISCORD_SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-[#eafaff]"
+            >
+              Support
+            </a>
           </div>
 
           <a
@@ -154,6 +165,18 @@ export default function Home() {
           <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2">
             <div className="whitespace-nowrap bg-gradient-to-b from-[#73dced]/[0.055] via-[#b8ecf5]/[0.025] to-transparent bg-clip-text text-[7rem] font-serif font-semibold tracking-[0.12em] text-transparent sm:text-[11rem] lg:text-[15rem]">
               Q&I
+            </div>
+          </div>
+
+          <div className="mb-7 flex justify-center">
+            <div className="relative">
+              <div className="pointer-events-none absolute inset-[-18px] rounded-full bg-[#55d4e9]/[0.10] blur-2xl" />
+
+              <img
+                src="/images/quill-icon.png"
+                alt="Quill & Ink"
+                className="relative h-24 w-24 rounded-full object-cover drop-shadow-[0_0_24px_rgba(84,204,226,0.18)] sm:h-28 sm:w-28"
+              />
             </div>
           </div>
 
@@ -277,6 +300,171 @@ export default function Home() {
                 <div key={feature.title}>{card}</div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+          {/* See It In Action */}
+      <section className="relative border-t border-[#6c9fbb]/10 px-6 py-28 sm:py-36">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.3em] text-[#75d9eb]">
+              <span>✦</span>
+              <span>See It In Action</span>
+            </div>
+
+            <h2 className="mt-5 font-serif text-4xl font-semibold tracking-tight text-[#f3f8fa] sm:text-5xl">
+              Built to work with your community.
+            </h2>
+
+            <div className="mt-5 flex items-center gap-3">
+              <span className="h-px w-20 bg-gradient-to-r from-[#65d8eb]/50 to-[#c6a15b]/35" />
+              <span className="text-xs text-[#75d9eb]/80">✦</span>
+            </div>
+
+            <p className="mt-6 text-lg leading-8 text-[#9db5c6]">
+              From setting up your server to giving members useful tools,
+              Quill & Ink brings your community experience together in one
+              modular bot.
+            </p>
+          </div>
+
+          <div className="mt-14 grid gap-6 lg:grid-cols-3">
+            {/* Setup */}
+            <article className="group overflow-hidden rounded-2xl border border-[#47718c]/25 bg-[#0a1b2d]/80 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-[#63d7ea]/45">
+              <div className="grid grid-cols-2 gap-px overflow-hidden border-b border-[#47718c]/20 bg-[#47718c]/20">
+                <div className="relative aspect-video overflow-hidden bg-[#071525]">
+                  <img
+                    src="/images/screenshots/setup-command.png"
+                    alt="Quill & Ink server setup command"
+                    className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
+                    Command
+                  </span>
+                </div>
+
+                <div className="relative aspect-video overflow-hidden bg-[#071525]">
+                  <img
+                    src="/images/screenshots/setup-result.png"
+                    alt="Quill & Ink server setup result"
+                    className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
+                    Result
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-7">
+                <div className="text-xs uppercase tracking-[0.25em] text-[#68869d]">
+                  01 · Setup
+                </div>
+
+                <h3 className="mt-3 font-serif text-2xl font-medium text-[#f2f8fa]">
+                  Start with your server
+                </h3>
+
+                <p className="mt-4 leading-7 text-[#9db4c4]">
+                  Get Quill & Ink ready for your community and configure the
+                  systems you want to use.
+                </p>
+              </div>
+            </article>
+
+            {/* Profile */}
+            <article className="group overflow-hidden rounded-2xl border border-[#47718c]/25 bg-[#0a1b2d]/80 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-[#63d7ea]/45">
+              <div className="grid grid-cols-2 gap-px overflow-hidden border-b border-[#47718c]/20 bg-[#47718c]/20">
+                <div className="relative aspect-video overflow-hidden bg-[#071525]">
+                  <img
+                    src="/images/screenshots/profile-command.png"
+                    alt="Quill & Ink member profile command"
+                    className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
+                    Command
+                  </span>
+                </div>
+
+                <div className="relative aspect-video overflow-hidden bg-[#071525]">
+                  <img
+                    src="/images/screenshots/profile-result.png"
+                    alt="Quill & Ink member profile result"
+                    className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
+                    Result
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-7">
+                <div className="text-xs uppercase tracking-[0.25em] text-[#68869d]">
+                  02 · Community
+                </div>
+
+                <h3 className="mt-3 font-serif text-2xl font-medium text-[#f2f8fa]">
+                  Give members more
+                </h3>
+
+                <p className="mt-4 leading-7 text-[#9db4c4]">
+                  Members can interact with Quill & Ink through community
+                  features designed to make your server feel alive.
+                </p>
+              </div>
+            </article>
+
+            {/* Tickets */}
+            <article className="group overflow-hidden rounded-2xl border border-[#47718c]/25 bg-[#0a1b2d]/80 backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-[#63d7ea]/45">
+              <div className="grid grid-cols-2 gap-px overflow-hidden border-b border-[#47718c]/20 bg-[#47718c]/20">
+                <div className="relative aspect-video overflow-hidden bg-[#071525]">
+                  <img
+                    src="/images/screenshots/ticket-command.png"
+                    alt="Quill & Ink ticket command"
+                    className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
+                    Command
+                  </span>
+                </div>
+
+                <div className="relative aspect-video overflow-hidden bg-[#071525]">
+                  <img
+                    src="/images/screenshots/ticket-result.png"
+                    alt="Quill & Ink ticket result"
+                    className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
+                  />
+                  <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
+                    Result
+                  </span>
+                </div>
+              </div>
+
+              <div className="p-7">
+                <div className="text-xs uppercase tracking-[0.25em] text-[#68869d]">
+                  03 · Support
+                </div>
+
+                <h3 className="mt-3 font-serif text-2xl font-medium text-[#f2f8fa]">
+                  Keep support organized
+                </h3>
+
+                <p className="mt-4 leading-7 text-[#9db4c4]">
+                  Give members a clear way to reach your staff while keeping
+                  support organized inside your Discord server.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <div className="mt-10 text-center">
+            <p className="text-sm uppercase tracking-[0.3em] text-[#718da3]">
+              <span className="text-[#8fe3ef]">✦</span>
+              <span className="mx-3">
+                18+ Plugins · 30+ Slash Commands
+              </span>
+              <span className="text-[#d0b16b]">✦</span>
+            </p>
           </div>
         </div>
       </section>
@@ -446,6 +634,15 @@ export default function Home() {
             >
               Contact Quill & Ink
             </a>
+
+            <a
+              href={DISCORD_SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-[#537c95]/60 bg-[#0a1b2d]/70 px-7 py-3.5 font-medium text-[#eef8fa] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
+            >
+              Join Support Server
+            </a>
           </div>
         </div>
       </section>
@@ -499,6 +696,15 @@ export default function Home() {
               </a>
 
               <a
+                href={DISCORD_SUPPORT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition hover:text-[#eaf8fb]"
+              >
+                Support Server
+              </a>
+
+              <a
                 href="/terms"
                 className="transition hover:text-[#eaf8fb]"
               >
@@ -542,15 +748,27 @@ export default function Home() {
               quillandinkofficial@gmail.com
             </a>
 
-            <a
-              href={DISCORD_INSTALL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-fit items-center gap-2 rounded-full border border-[#537c95]/50 bg-[#0a1b2d]/70 px-4 py-2 text-[#dff8fc] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
-            >
-              <span className="text-[#72d9eb]">✦</span>
-              Add to Discord
-            </a>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={DISCORD_SUPPORT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-[#537c95]/50 bg-[#0a1b2d]/70 px-4 py-2 text-[#dff8fc] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
+              >
+                <span className="text-[#72d9eb]">✦</span>
+                Support Server
+              </a>
+
+              <a
+                href={DISCORD_INSTALL_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-[#537c95]/50 bg-[#0a1b2d]/70 px-4 py-2 text-[#dff8fc] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
+              >
+                <span className="text-[#72d9eb]">✦</span>
+                Add to Discord
+              </a>
+            </div>
           </div>
 
           <p className="text-xs text-[#536d80]">

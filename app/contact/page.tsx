@@ -1,3 +1,5 @@
+const DISCORD_SUPPORT_URL = "https://discord.gg/v95scy728";
+
 export default function ContactPage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-[#061525] px-6 py-20 text-[#f4f8ff]">
@@ -62,12 +64,23 @@ export default function ContactPage() {
                 other service-related matters.
               </p>
 
-              <a
-                href="mailto:quillandinkofficial@gmail.com"
-                className="mt-6 inline-flex items-center rounded-full bg-gradient-to-r from-[#73d9eb] to-[#b8f0fa] px-6 py-3 font-medium text-[#061525] transition hover:brightness-110"
-              >
-                Email us
-              </a>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href="mailto:quillandinkofficial@gmail.com"
+                  className="inline-flex items-center rounded-full bg-gradient-to-r from-[#73d9eb] to-[#b8f0fa] px-6 py-3 font-medium text-[#061525] transition hover:brightness-110"
+                >
+                  Email us
+                </a>
+
+                <a
+                  href={DISCORD_SUPPORT_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-full border border-[#73d9eb]/35 px-6 py-3 font-medium text-[#73d9eb] transition hover:border-[#73d9eb]/70 hover:bg-[#73d9eb]/[0.06] hover:text-[#dff7ff]"
+                >
+                  Support Server
+                </a>
+              </div>
             </div>
           </article>
 
@@ -151,6 +164,19 @@ export default function ContactPage() {
               quillandinkofficial@gmail.com
             </a>
             .
+          </p>
+
+          <p className="mt-3">
+            You may also join our{" "}
+            <a
+              href={DISCORD_SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#73d9eb] transition hover:text-[#dff7ff]"
+            >
+              Support Server
+            </a>{" "}
+            on Discord for assistance.
           </p>
         </footer>
 

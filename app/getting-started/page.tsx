@@ -1,6 +1,8 @@
 const DISCORD_INSTALL_URL =
   "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2833847071407158&integration_type=0&scope=applications.commands+bot";
 
+const DISCORD_SUPPORT_URL = "https://discord.gg/v95scy728";
+
 const steps = [
   {
     number: "01",
@@ -132,6 +134,15 @@ export default function GettingStartedPage() {
               className="rounded-full border border-[#6d89a3]/30 bg-[#081a2c]/50 px-8 py-4 text-sm font-semibold text-[#d8e8f5] backdrop-blur-md transition hover:border-[#73d9eb]/60 hover:text-[#73d9eb]"
             >
               View Pricing
+            </a>
+
+            <a
+              href={DISCORD_SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-full border border-[#537c95]/50 bg-[#081a2c]/50 px-8 py-4 text-sm font-semibold text-[#d8e8f5] backdrop-blur-md transition hover:border-[#73d9eb]/60 hover:text-[#73d9eb]"
+            >
+              Support Server
             </a>
           </div>
         </div>
@@ -306,12 +317,23 @@ export default function GettingStartedPage() {
             experience today.
           </p>
 
-          <a
-            href={DISCORD_INSTALL_URL}
-            className="mt-9 inline-flex rounded-full bg-[#f4f8ff] px-8 py-4 text-sm font-semibold text-[#061525] shadow-[0_0_35px_rgba(115,217,235,0.1)] transition hover:bg-[#73d9eb]"
-          >
-            Add Quill &amp; Ink to Discord
-          </a>
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={DISCORD_INSTALL_URL}
+              className="inline-flex rounded-full bg-[#f4f8ff] px-8 py-4 text-sm font-semibold text-[#061525] shadow-[0_0_35px_rgba(115,217,235,0.1)] transition hover:bg-[#73d9eb]"
+            >
+              Add Quill &amp; Ink to Discord
+            </a>
+
+            <a
+              href={DISCORD_SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex rounded-full border border-[#537c95]/50 bg-[#081a2c]/70 px-8 py-4 text-sm font-semibold text-[#d8e8f5] transition hover:border-[#73d9eb]/60 hover:text-[#73d9eb]"
+            >
+              Join Support Server
+            </a>
+          </div>
         </div>
       </section>
 
@@ -353,6 +375,15 @@ export default function GettingStartedPage() {
               className="transition hover:text-[#73d9eb]"
             >
               Contact
+            </a>
+
+            <a
+              href={DISCORD_SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-[#73d9eb]"
+            >
+              Support Server
             </a>
 
             <a

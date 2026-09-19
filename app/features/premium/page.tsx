@@ -1,5 +1,6 @@
 const DISCORD_INSTALL_URL =
   "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2833847071407158&integration_type=0&scope=applications.commands+bot";
+const DISCORD_SUPPORT_URL = "https://discord.gg/v95scy728";
 
 const premiumFeatures = [
   {
@@ -54,11 +55,21 @@ export default function PremiumPage() {
         <div className="absolute -right-40 top-[25%] h-[36rem] w-[36rem] rounded-full bg-[#36c9e8]/10 blur-[160px]" />
         <div className="absolute bottom-[15%] left-1/2 h-[30rem] w-[44rem] -translate-x-1/2 rounded-full bg-[#c6a15b]/[0.06] blur-[150px]" />
 
-        <div className="absolute left-[8%] top-[12%] text-sm text-white/30">✦</div>
-        <div className="absolute right-[12%] top-[18%] text-xs text-[#73d9eb]/40">✦</div>
-        <div className="absolute left-[18%] top-[58%] text-xs text-white/20">✦</div>
-        <div className="absolute right-[20%] bottom-[20%] text-sm text-[#73d9eb]/25">✦</div>
-        <div className="absolute left-[48%] top-[8%] text-xs text-[#d0b16b]/30">✦</div>
+        <div className="absolute left-[8%] top-[12%] text-sm text-white/30">
+          ✦
+        </div>
+        <div className="absolute right-[12%] top-[18%] text-xs text-[#73d9eb]/40">
+          ✦
+        </div>
+        <div className="absolute left-[18%] top-[58%] text-xs text-white/20">
+          ✦
+        </div>
+        <div className="absolute right-[20%] bottom-[20%] text-sm text-[#73d9eb]/25">
+          ✦
+        </div>
+        <div className="absolute left-[48%] top-[8%] text-xs text-[#d0b16b]/30">
+          ✦
+        </div>
       </div>
 
       <nav className="relative z-10 mx-auto flex max-w-5xl items-center justify-between px-6 py-7">
@@ -84,6 +95,14 @@ export default function PremiumPage() {
           </a>
           <a href="/contact" className="transition hover:text-[#73d9eb]">
             Contact
+          </a>
+          <a
+            href={DISCORD_SUPPORT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition hover:text-[#73d9eb]"
+          >
+            Support Server
           </a>
         </div>
 
@@ -277,6 +296,14 @@ export default function PremiumPage() {
             </a>
             <a href="/contact" className="transition hover:text-[#73d9eb]">
               Contact
+            </a>
+            <a
+              href={DISCORD_SUPPORT_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition hover:text-[#73d9eb]"
+            >
+              Support Server
             </a>
             <a href="/privacy" className="transition hover:text-[#73d9eb]">
               Privacy

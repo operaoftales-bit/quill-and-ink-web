@@ -1,3 +1,4 @@
+
 export default function TermsPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#061525] px-6 py-20 text-[#f5f7f8] selection:bg-[#65d9ee]/25 selection:text-white">
@@ -481,6 +482,16 @@ export default function TermsPage() {
               services, please contact us through the contact information
               provided on our website.
             </p>
+
+            <a
+              href="https://discord.gg/v95scy728"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#537c95]/60 bg-[#0a1b2d]/70 px-5 py-2.5 text-sm font-medium text-[#eaf8fb] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
+            >
+              <span className="text-[#72d9eb]">✦</span>
+              Join Support Server
+            </a>
           </section>
 
           <section>
