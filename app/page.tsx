@@ -175,7 +175,7 @@ export default function Home() {
               <img
                 src="/images/quill-icon.png"
                 alt="Quill & Ink"
-                className="relative h-24 w-24 object-contain sm:h-28 sm:w-28"
+                className="relative h-32 w-32 object-contain sm:h-36 sm:w-36"
               />
             </div>
           </div>
