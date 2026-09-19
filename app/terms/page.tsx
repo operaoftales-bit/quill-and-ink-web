@@ -188,13 +188,13 @@ export default function TermsPage() {
               Quill & Ink may provide Premium features for eligible Discord
               servers.
             </p>
-
+ 
             <p className="mt-4">
               The current Premium price is:
             </p>
 
             <p className="mt-4 font-serif text-2xl font-semibold text-[#d8bd78]">
-              ₹700 for 30 days of Premium access.
+              ₹350 for 30 days of Premium access.
             </p>
 
             <p className="mt-4">
