@@ -62,6 +62,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="relative border-b border-[#6da8c8]/15 bg-[#061525]/80 px-6 backdrop-blur-md">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 py-5">
+          {/* Brand */}
           <a
             href="/"
             className="group flex shrink-0 items-center gap-3 text-lg font-semibold tracking-wide"
@@ -73,26 +74,49 @@ export default function Home() {
             <span className="text-[#f5f7f8]">Quill & Ink</span>
           </a>
 
-          <div className="hidden items-center gap-7 text-sm text-[#91a9bd] sm:flex">
-            <a
-              href="/#features"
-              className="transition hover:text-[#eafaff]"
-            >
-              Features
-            </a>
+          {/* Desktop Navigation */}
+          <div className="hidden items-center gap-6 text-sm text-[#91a9bd] lg:flex">
+            {/* Features Dropdown */}
+            <div className="group relative">
+              <button
+                type="button"
+                className="flex items-center gap-1.5 py-2 transition hover:text-[#eafaff]"
+              >
+                Features
+                <span className="text-[10px] text-[#72d8ed] transition group-hover:rotate-180">
+                  ▾
+                </span>
+              </button>
+
+              <div className="pointer-events-none absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-3 opacity-0 transition duration-200 group-hover:pointer-events-auto group-hover:opacity-100">
+                <div className="overflow-hidden rounded-2xl border border-[#47718c]/30 bg-[#081a2d]/95 p-2 shadow-[0_20px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl">
+                  {features.map((feature) => (
+                    <a
+                      key={feature.title}
+                      href={feature.href}
+                      className="block rounded-xl px-4 py-3 transition hover:bg-[#102b43] hover:text-[#eafaff]"
+                    >
+                      <div className="flex items-center gap-2">
+                        <span className="text-[#72d8ed]">✦</span>
+                        <span className="font-medium">
+                          {feature.title}
+                        </span>
+                      </div>
+
+                      <p className="mt-1 pl-5 text-xs leading-5 text-[#718da3]">
+                        {feature.description}
+                      </p>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             <a
               href="/pricing"
               className="transition hover:text-[#eafaff]"
             >
               Pricing
-            </a>
-
-            <a
-              href="/#premium"
-              className="transition hover:text-[#eafaff]"
-            >
-              Premium
             </a>
 
             <a
@@ -109,6 +133,14 @@ export default function Home() {
               Contact
             </a>
 
+            {/* Dashboard */}
+            <a
+              href="/dashboard"
+              className="rounded-full border border-[#65d8eb]/35 bg-[#0a2539]/60 px-4 py-2 text-[#dff8fc] transition hover:border-[#72d8ed]/70 hover:bg-[#12344d] hover:text-white"
+            >
+              Dashboard
+            </a>
+
             <a
               href={DISCORD_SUPPORT_URL}
               target="_blank"
@@ -119,13 +151,63 @@ export default function Home() {
             </a>
           </div>
 
+          {/* Tablet Dashboard */}
+          <a
+            href="/dashboard"
+            className="hidden shrink-0 rounded-full border border-[#65d8eb]/35 bg-[#0a2539]/70 px-4 py-2 text-sm font-medium text-[#dff8fc] transition hover:border-[#a9edf6] hover:bg-[#12344d] sm:inline-flex lg:hidden"
+          >
+            Dashboard
+          </a>
+
+          {/* Primary CTA */}
           <a
             href={DISCORD_INSTALL_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="shrink-0 rounded-full border border-[#65d8eb]/55 bg-[#0a2539]/80 px-4 py-2 text-sm font-medium text-[#eafcff] transition hover:border-[#a9edf6] hover:bg-[#12344d]"
           >
-            Add to Discord
+            <span className="hidden sm:inline">Add to Discord</span>
+            <span className="sm:hidden">Add</span>
+          </a>
+        </div>
+
+        {/* Mobile Navigation */}
+        <div className="mx-auto flex max-w-6xl gap-2 overflow-x-auto pb-4 text-xs sm:hidden">
+          <a
+            href="/#features"
+            className="shrink-0 rounded-full border border-[#47718c]/30 bg-[#0a1b2d]/70 px-4 py-2 text-[#9db5c6] transition hover:border-[#63d7ea]/50 hover:text-[#eafaff]"
+          >
+            Features
+          </a>
+
+          <a
+            href="/pricing"
+            className="shrink-0 rounded-full border border-[#47718c]/30 bg-[#0a1b2d]/70 px-4 py-2 text-[#9db5c6] transition hover:border-[#63d7ea]/50 hover:text-[#eafaff]"
+          >
+            Pricing
+          </a>
+
+          <a
+            href="/getting-started"
+            className="shrink-0 rounded-full border border-[#47718c]/30 bg-[#0a1b2d]/70 px-4 py-2 text-[#9db5c6] transition hover:border-[#63d7ea]/50 hover:text-[#eafaff]"
+          >
+            Getting Started
+          </a>
+
+          <a
+            href="/contact"
+            className="shrink-0 rounded-full border border-[#47718c]/30 bg-[#0a1b2d]/70 px-4 py-2 text-[#9db5c6] transition hover:border-[#63d7ea]/50 hover:text-[#eafaff]"
+          >
+            Contact
+          </a>
+
+          <a
+            href={DISCORD_SUPPORT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 rounded-full border border-[#47718c]/30 bg-[#0a1b2d]/70 px-4 py-2 text-[#9db5c6] transition hover:border-[#63d7ea]/50 hover:text-[#eafaff]"
+          >
+            Support
           </a>
         </div>
       </nav>
@@ -304,7 +386,7 @@ export default function Home() {
         </div>
       </section>
 
-          {/* See It In Action */}
+      {/* See It In Action */}
       <section className="relative border-t border-[#6c9fbb]/10 px-6 py-28 sm:py-36">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl">
@@ -339,6 +421,7 @@ export default function Home() {
                     alt="Quill & Ink server setup command"
                     className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
                   />
+
                   <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
                     Command
                   </span>
@@ -350,6 +433,7 @@ export default function Home() {
                     alt="Quill & Ink server setup result"
                     className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
                   />
+
                   <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
                     Result
                   </span>
@@ -381,6 +465,7 @@ export default function Home() {
                     alt="Quill & Ink member profile command"
                     className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
                   />
+
                   <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
                     Command
                   </span>
@@ -392,6 +477,7 @@ export default function Home() {
                     alt="Quill & Ink member profile result"
                     className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
                   />
+
                   <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
                     Result
                   </span>
@@ -423,6 +509,7 @@ export default function Home() {
                     alt="Quill & Ink ticket command"
                     className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
                   />
+
                   <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
                     Command
                   </span>
@@ -434,6 +521,7 @@ export default function Home() {
                     alt="Quill & Ink ticket result"
                     className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.02]"
                   />
+
                   <span className="absolute bottom-2 left-2 rounded-full border border-[#47718c]/40 bg-[#061525]/85 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-[#a9c1cf] backdrop-blur-sm">
                     Result
                   </span>
@@ -618,7 +706,7 @@ export default function Home() {
             Quill & Ink is built to grow alongside your Discord community.
           </p>
 
-          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+          <div className="mt-9 flex flex-col justify-center gap-4 sm:flex-row sm:flex-wrap">
             <a
               href={DISCORD_INSTALL_URL}
               target="_blank"
@@ -626,6 +714,13 @@ export default function Home() {
               className="rounded-full border border-[#76dcec]/60 bg-gradient-to-r from-[#4cbfd8] to-[#63d6e9] px-7 py-3.5 font-medium text-[#061525] shadow-[0_0_35px_rgba(76,191,216,0.1)] transition hover:border-[#b7f1f8] hover:from-[#69d8e9] hover:to-[#8be4f0]"
             >
               Add Quill & Ink to Discord
+            </a>
+
+            <a
+              href="/dashboard"
+              className="rounded-full border border-[#65d8eb]/55 bg-[#0a2539]/80 px-7 py-3.5 font-medium text-[#eafcff] transition hover:border-[#a9edf6] hover:bg-[#12344d]"
+            >
+              Open Dashboard
             </a>
 
             <a
@@ -679,6 +774,13 @@ export default function Home() {
                 className="transition hover:text-[#eaf8fb]"
               >
                 Pricing
+              </a>
+
+              <a
+                href="/dashboard"
+                className="transition hover:text-[#eaf8fb]"
+              >
+                Dashboard
               </a>
 
               <a
@@ -749,6 +851,14 @@ export default function Home() {
             </a>
 
             <div className="flex flex-wrap items-center gap-3">
+              <a
+                href="/dashboard"
+                className="inline-flex w-fit items-center gap-2 rounded-full border border-[#537c95]/50 bg-[#0a1b2d]/70 px-4 py-2 text-[#dff8fc] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
+              >
+                <span className="text-[#72d9eb]">✦</span>
+                Dashboard
+              </a>
+
               <a
                 href={DISCORD_SUPPORT_URL}
                 target="_blank"
