@@ -31,7 +31,7 @@ interface PluginDefinition {
     name: string;
     description: string;
     category: PluginCategory;
-    status: "enabled" | "disabled" | "coming_soon";
+    status: "available" | "disabled";
     premium?: boolean;
     configure?: boolean;
 }
@@ -43,7 +43,7 @@ const plugins: PluginDefinition[] = [
         description:
             "Protect your server with automatic moderation and filtering.",
         category: "Moderation",
-        status: "enabled",
+        status: "available",
         configure: false
     },
     {
@@ -52,73 +52,14 @@ const plugins: PluginDefinition[] = [
         description:
             "Configure detailed spam detection, filters, actions, and protections.",
         category: "Moderation",
-        status: "enabled",
+        status: "available",
         premium: true,
         configure: true
-    },
-    {
-        id: "moderation",
-        name: "Moderation",
-        description:
-            "Manage Quill & Ink's moderation tools and server protection.",
-        category: "Moderation",
-        status: "coming_soon"
-    },
-    {
-        id: "welcome",
-        name: "Welcome",
-        description:
-            "Configure welcome messages and new-member experiences.",
-        category: "Community",
-        status: "coming_soon"
-    },
-    {
-        id: "birthday",
-        name: "Birthday Tracker",
-        description:
-            "Let members register birthdays and configure birthday rewards.",
-        category: "Community",
-        status: "coming_soon"
-    },
-    {
-        id: "economy",
-        name: "Economy",
-        description:
-            "Configure the server's Nickel economy and related systems.",
-        category: "Economy",
-        status: "coming_soon"
-    },
-    {
-        id: "store",
-        name: "Store",
-        description:
-            "Manage categories, items, purchases, and server store settings.",
-        category: "Economy",
-        status: "coming_soon"
-    },
-    {
-        id: "bank-locker",
-        name: "Bank Locker",
-        description:
-            "Configure savings, maturity, and interest settings.",
-        category: "Economy",
-        status: "coming_soon"
-    },
-    {
-        id: "games",
-        name: "Games",
-        description:
-            "Configure Quill & Ink's games and interactive features.",
-        category: "Games",
-        status: "coming_soon"
     }
 ];
 
 const categories: PluginCategory[] = [
-    "Moderation",
-    "Community",
-    "Economy",
-    "Games"
+    "Moderation"
 ];
 
 function getErrorMessage(error: string | undefined): string {
@@ -158,14 +99,11 @@ function getStatusLabel(
     status: PluginDefinition["status"]
 ): string {
     switch (status) {
-        case "enabled":
-            return "Enabled";
+        case "available":
+            return "Available";
 
         case "disabled":
             return "Disabled";
-
-        case "coming_soon":
-            return "Coming soon";
     }
 }
 
@@ -173,14 +111,11 @@ function getStatusClasses(
     status: PluginDefinition["status"]
 ): string {
     switch (status) {
-        case "enabled":
+        case "available":
             return "border-[#65d8eb]/20 bg-[#0a2539] text-[#72d8ed]";
 
         case "disabled":
             return "border-[#47718c]/25 bg-[#0a1b2d] text-[#7894a8]";
-
-        case "coming_soon":
-            return "border-[#47718c]/20 bg-[#0a1b2d] text-[#7894a8]";
     }
 }
 
@@ -342,8 +277,8 @@ export default function ServerDashboardPage() {
         );
     }
 
-    const enabledPlugins = plugins.filter(
-        (plugin) => plugin.status === "enabled"
+    const availablePlugins = plugins.filter(
+        (plugin) => plugin.status === "available"
     );
 
     return (
@@ -508,26 +443,26 @@ export default function ServerDashboardPage() {
 
                         </div>
 
-                        {/* Enabled plugins */}
+                        {/* Available plugins */}
                         <section className="mt-12">
                             <div className="flex items-end justify-between gap-4">
                                 <div>
                                     <p className="text-xs uppercase tracking-[0.2em] text-[#75d9eb]">
-                                        Your plugins
+                                        Dashboard features
                                     </p>
 
                                     <h2 className="mt-2 font-serif text-2xl font-semibold">
-                                        Active features
+                                        Available features
                                     </h2>
                                 </div>
 
                                 <span className="text-sm text-[#7894a8]">
-                                    {enabledPlugins.length} enabled
+                                    {availablePlugins.length} available
                                 </span>
                             </div>
 
                             <div className="mt-6 grid gap-4 md:grid-cols-2">
-                                {enabledPlugins.map((plugin) => (
+                                {availablePlugins.map((plugin) => (
                                     <PluginCard
                                         key={plugin.id}
                                         plugin={plugin}
@@ -573,29 +508,6 @@ export default function ServerDashboardPage() {
                             );
                         })}
 
-                        {/* Server settings placeholder */}
-                        <section
-                            id="settings"
-                            className="mt-14 scroll-mt-8"
-                        >
-                            <div className="rounded-3xl border border-[#47718c]/20 bg-[#091a2c] p-7">
-                                <p className="text-xs uppercase tracking-[0.2em] text-[#7894a8]">
-                                    Server settings
-                                </p>
-
-                                <h2 className="mt-2 font-serif text-2xl font-semibold">
-                                    More controls are coming
-                                </h2>
-
-                                <p className="mt-3 max-w-2xl text-sm leading-6 text-[#9db5c6]">
-                                    Plugin management, ignored channels,
-                                    ignored roles, and other server-wide
-                                    settings will be added here as the
-                                    dashboard grows.
-                                </p>
-                            </div>
-                        </section>
-
                         <footer className="mt-12 border-t border-[#47718c]/20 pt-6 text-sm text-[#7894a8]">
                             Guild ID: {guildId}
                         </footer>
@@ -614,11 +526,8 @@ function PluginCard({
     plugin: PluginDefinition;
     guildId: string;
 }) {
-    const isEnabled =
-        plugin.status === "enabled";
-
-    const isComingSoon =
-        plugin.status === "coming_soon";
+    const isAvailable =
+        plugin.status === "available";
 
     return (
         <article className="flex h-full flex-col rounded-3xl border border-[#47718c]/25 bg-[#091a2c] p-6 transition hover:border-[#47718c]/45">
@@ -651,20 +560,16 @@ function PluginCard({
             </div>
 
             <div className="mt-6 flex flex-wrap items-center gap-3 border-t border-[#47718c]/20 pt-5">
-                {isEnabled && plugin.configure ? (
+                {isAvailable && plugin.configure ? (
                     <a
                         href={`/dashboard/${guildId}/automod`}
                         className="rounded-full border border-[#537c95]/60 bg-[#0a1b2d] px-5 py-2.5 text-sm font-medium text-[#eef8fa] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
                     >
                         Configure
                     </a>
-                ) : isEnabled ? (
+                ) : isAvailable ? (
                     <span className="rounded-full border border-[#47718c]/25 bg-[#0a1b2d] px-5 py-2.5 text-sm text-[#7894a8]">
                         Configurable in Discord
-                    </span>
-                ) : isComingSoon ? (
-                    <span className="text-sm text-[#7894a8]">
-                        Dashboard controls coming soon
                     </span>
                 ) : (
                     <span className="text-sm text-[#7894a8]">

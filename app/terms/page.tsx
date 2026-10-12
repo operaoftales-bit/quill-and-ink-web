@@ -1,530 +1,351 @@
 
 export default function TermsPage() {
+  const sections = [
+    {
+      title: "1. About Quill & Ink",
+      paragraphs: [
+        "Quill & Ink is a Discord bot that provides community tools, moderation, economy features, games, automation, and other server features.",
+        "Features may be updated, changed, added, restricted, or discontinued as the project develops. The availability of a particular feature is not guaranteed indefinitely."
+      ]
+    },
+    {
+      title: "2. Discord Terms and Policies",
+      paragraphs: [
+        "Your use of Quill & Ink is also subject to Discord's applicable Terms of Service, Community Guidelines, Developer Policy, and other relevant rules.",
+        "You must not use Quill & Ink in a way that violates Discord's rules or applicable law.",
+        "Discord independently manages its platform and accounts. We cannot control Discord's decisions to restrict, suspend, or terminate an account or server."
+      ]
+    },
+    {
+      title: "3. Acceptable Use",
+      paragraphs: [
+        "You agree to use Quill & Ink responsibly, lawfully, and in accordance with these Terms.",
+        "You must not use Quill & Ink to:"
+      ],
+      bullets: [
+        "Conduct, facilitate, or promote illegal activities.",
+        "Harass, threaten, abuse, or deliberately target other users.",
+        "Distribute malware, malicious software, or other harmful content.",
+        "Damage, disrupt, overload, or interfere with the bot or its infrastructure.",
+        "Attempt to gain unauthorised access to the bot, its database, infrastructure, accounts, or related systems.",
+        "Bypass Premium restrictions, payment verification, access controls, rate limits, or other security measures.",
+        "Exploit bugs or vulnerabilities for abuse, financial gain, or unauthorised access.",
+        "Forge or manipulate payment, transaction, entitlement, or webhook information.",
+        "Copy, modify, reverse engineer, or redistribute proprietary components except where expressly permitted by applicable law.",
+        "Abuse automated requests or deliberately generate excessive traffic.",
+        "Use the service to facilitate scams, fraud, phishing, or other deceptive activities.",
+        "Use the service in ways that could reasonably harm Quill & Ink, its users, Discord, or third-party services."
+      ],
+      after: [
+        "Finding a bug does not give you permission to exploit it. Please report suspected security issues responsibly through our support channels."
+      ]
+    },
+    {
+      title: "4. Server Owner and Administrator Responsibilities",
+      paragraphs: [
+        "Server owners and administrators are responsible for how Quill & Ink is configured and used within their Discord servers.",
+        "You are responsible for choosing appropriate settings, reviewing the permissions granted to the bot, and ensuring that your server's use of the service complies with Discord's rules and applicable law.",
+        "Server administrators should also consider how enabled features affect their members and what information may be visible through server channels or bot interactions.",
+        "Quill & Ink does not automatically endorse or take responsibility for content submitted by individual Discord users."
+      ]
+    },
+    {
+      title: "5. Premium Services",
+      paragraphs: [
+        "Quill & Ink may offer paid Premium features for eligible Discord servers.",
+        "The current Premium price is ₹350 for 30 days of access.",
+        "Premium access is associated with the applicable Discord server and is subject to successful payment verification, activation, and the availability of the relevant features.",
+        "Premium does not automatically renew. If you want additional access after the purchased period expires, you must make another purchase through the Premium option in the bot's /setup command.",
+        "Purchasing Premium does not give you ownership of Quill & Ink, its software, branding, infrastructure, or intellectual property.",
+        "Premium features may be updated, changed, restricted, or discontinued when reasonably necessary. This does not remove any rights or remedies that cannot legally be excluded."
+      ],
+      highlight: "₹350 for 30 days"
+    },
+    {
+      title: "6. Payments",
+      paragraphs: [
+        "Payments for Premium are handled through the payment provider used at checkout.",
+        "You are responsible for checking your purchase details and providing the information required to complete the transaction.",
+        "Payment processing, verification, and transaction records may be subject to the payment provider's own terms and policies.",
+        "Quill & Ink should not receive your full payment-card or banking credentials through ordinary bot commands or support messages. The payment information handled by our systems depends on the checkout integration and the information returned by the provider.",
+        "A payment must be successfully verified before Premium access can be activated. If you encounter a payment problem, contact support rather than repeatedly submitting the same purchase."
+      ]
+    },
+    {
+      title: "7. Cancellation and Refunds",
+      paragraphs: [
+        "Premium purchases are generally non-refundable once access has been successfully provisioned, subject to applicable law.",
+        "We generally do not provide refunds solely because a user:"
+      ],
+      bullets: [
+        "Changes their mind after purchasing Premium.",
+        "Does not use the available Premium features.",
+        "Uses only part of the purchased period.",
+        "Leaves or is removed from a Discord server.",
+        "Loses access to their Discord account or server.",
+        "Has their Discord account or server restricted.",
+        "Does not configure or use the available Premium features.",
+        "Has Premium access terminated because of a violation of these Terms."
+      ],
+      after: [
+        "Payment failures, confirmed duplicate charges, and other exceptional circumstances may require individual review.",
+        "Nothing in these Terms overrides a refund, cancellation, or consumer right that cannot legally be excluded. See our Cancellation & Refunds Policy for more information."
+      ]
+    },
+    {
+      title: "8. Suspension and Termination",
+      paragraphs: [
+        "We may restrict, suspend, or terminate access to Quill & Ink, including Premium access, if we reasonably believe that:"
+      ],
+      bullets: [
+        "These Terms or applicable Discord rules have been violated.",
+        "The service has been abused or deliberately exploited.",
+        "Someone has attempted to bypass security or Premium restrictions.",
+        "Fraudulent, unlawful, or unauthorised activity has occurred.",
+        "The activity creates a significant risk to the service, its users, or its infrastructure."
+      ],
+      after: [
+        "Where appropriate, we may temporarily restrict access while investigating a suspected security incident or serious abuse.",
+        "Suspension or termination resulting from a violation does not automatically entitle a user to a refund. Applicable legal rights remain unaffected."
+      ]
+    },
+    {
+      title: "9. Service Availability",
+      paragraphs: [
+        "We aim to keep Quill & Ink reliable and available, but uninterrupted or error-free operation cannot be guaranteed.",
+        "The service may occasionally be unavailable or limited because of maintenance, updates, hosting or database problems, Discord outages or API limitations, third-party failures, security incidents, or circumstances beyond our reasonable control.",
+        "We may modify, maintain, or temporarily suspend parts of the service when necessary to protect or maintain its operation.",
+        "We will make reasonable efforts to address issues, but we cannot guarantee a particular resolution time."
+      ]
+    },
+    {
+      title: "10. Third-Party Services",
+      paragraphs: [
+        "Quill & Ink relies on third-party services, which may include Discord, payment providers, hosting providers, database services, and other infrastructure.",
+        "These services operate independently and may change their features, terms, availability, or policies.",
+        "We cannot control every aspect of third-party services or guarantee their continued availability. Your use of those services remains subject to their own applicable terms and policies."
+      ]
+    },
+    {
+      title: "11. Intellectual Property",
+      paragraphs: [
+        "Quill & Ink's original software, branding, design, documentation, and proprietary components belong to their respective owners unless otherwise stated.",
+        "You may use Quill & Ink through the service as intended. Doing so does not transfer ownership or intellectual property rights to you.",
+        "You must not copy, sell, redistribute, or commercially exploit proprietary parts of Quill & Ink without permission, except where applicable law allows it.",
+        "Nothing in this section is intended to remove rights that users have under applicable law."
+      ]
+    },
+    {
+      title: "12. User Content",
+      paragraphs: [
+        "You retain whatever rights you hold in the original content you create or submit through Discord, subject to any rights or restrictions that already apply to that content.",
+        "When you use a Quill & Ink feature that processes your content, you allow the service to handle that content only as reasonably necessary to provide the requested feature, operate the service, and maintain its security.",
+        "Quill & Ink does not claim ownership of your original stories, messages, images, or other user-created content merely because you use the bot.",
+        "You are responsible for ensuring that content you submit is lawful and does not violate another person's rights or Discord's rules."
+      ]
+    },
+    {
+      title: "13. Limitation of Liability",
+      paragraphs: [
+        "To the extent permitted by applicable law, Quill & Ink and its operators are not responsible for indirect or consequential losses arising from the use of, inability to use, or interruption of the service.",
+        "Examples may include losses connected with Discord outages, third-party service failures, server configuration mistakes, loss of access to a Discord account or server, or misuse of the service.",
+        "This section does not exclude or limit liability where doing so would be unlawful. Your rights under applicable law remain unaffected."
+      ]
+    },
+    {
+      title: "14. Changes to These Terms",
+      paragraphs: [
+        "We may update these Terms as Quill & Ink, its features, or its operating requirements change.",
+        "The latest version will be published on this website with its updated date. We encourage you to review the Terms periodically, particularly before making a Premium purchase.",
+        "Where appropriate, significant changes may be communicated through our available channels.",
+        "Changes to these Terms do not remove rights or protections that already apply under applicable law."
+      ]
+    },
+    {
+      title: "15. Contact",
+      paragraphs: [
+        "If you have questions about these Terms, Premium access, or the operation of Quill & Ink, please contact us through the official support server."
+      ],
+      support: true
+    },
+    {
+      title: "16. Acceptance",
+      paragraphs: [
+        "By adding, accessing, or using Quill & Ink, you acknowledge that you have had the opportunity to read these Terms.",
+        "If you do not agree with these Terms, please stop using the service. A Premium purchase is also subject to the applicable purchase and refund policies."
+      ]
+    }
+  ];
+
   return (
-    <main className="min-h-screen overflow-hidden bg-[#061525] px-6 py-20 text-[#f5f7f8] selection:bg-[#65d9ee]/25 selection:text-white">
-      {/* Atmospheric background */}
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+    <main className="relative min-h-screen overflow-hidden bg-[#061525] px-5 py-14 text-[#f5f7f8] selection:bg-[#65d9ee]/25 selection:text-white sm:px-6 sm:py-20">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 overflow-hidden"
+      >
         <div className="absolute left-1/2 top-[-20rem] h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-[#174b72]/30 blur-3xl" />
-
         <div className="absolute left-[-12rem] top-[30%] h-[32rem] w-[32rem] rounded-full bg-[#38bfd9]/[0.055] blur-3xl" />
-
         <div className="absolute bottom-[-18rem] right-[-10rem] h-[36rem] w-[36rem] rounded-full bg-[#123f69]/35 blur-3xl" />
-
         <div className="absolute right-[12%] top-[12%] h-[20rem] w-[20rem] rounded-full bg-[#c6a15b]/[0.025] blur-3xl" />
-
         <div className="absolute inset-0 opacity-[0.03] [background-image:radial-gradient(#eafaff_0.6px,transparent_0.6px)] [background-size:24px_24px]" />
       </div>
 
-      {/* Decorative stars */}
-      <div className="pointer-events-none fixed inset-0 -z-10">
-        <span className="absolute left-[9%] top-[18%] text-xs text-[#eafcff]/50">
-          ✦
-        </span>
-
-        <span className="absolute left-[18%] top-[68%] text-sm text-[#70d9eb]/40">
-          ✦
-        </span>
-
-        <span className="absolute right-[12%] top-[24%] text-xs text-[#d9f8fc]/50">
-          ✦
-        </span>
-
-        <span className="absolute right-[7%] top-[61%] text-sm text-[#d0b16b]/40">
-          ✦
-        </span>
-      </div>
-
-      {/* Page */}
-      <article className="mx-auto max-w-4xl">
-        {/* Back navigation */}
+      <article className="relative mx-auto max-w-4xl">
         <a
           href="/"
-          className="group inline-flex items-center gap-3 text-sm text-[#8faabd] transition hover:text-[#eafaff]"
+          className="group inline-flex items-center gap-3 text-sm text-[#8faabd] transition-colors hover:text-[#eafaff]"
         >
-          <span className="text-[#70d9eb] transition group-hover:-translate-x-1">
+          <span className="text-[#70d9eb] transition-transform group-hover:-translate-x-1">
             ←
           </span>
-
           <span>Back to Quill & Ink</span>
         </a>
 
-        {/* Header */}
-        <div className="relative mt-12 overflow-hidden rounded-3xl border border-[#56859f]/20 bg-[#091b2d]/65 p-8 backdrop-blur-sm sm:p-12">
-          <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#55d5e8]/[0.055] blur-3xl" />
-
-          <div className="pointer-events-none absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-[#c6a15b]/[0.025] blur-3xl" />
+        <header className="relative mt-8 overflow-hidden rounded-3xl border border-[#56859f]/20 bg-[#091b2d]/75 p-6 shadow-[0_0_80px_rgba(40,180,220,0.05)] backdrop-blur-sm sm:mt-10 sm:p-10 md:p-12">
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[#55d5e8]/[0.055] blur-3xl"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute -bottom-24 -left-24 h-56 w-56 rounded-full bg-[#c6a15b]/[0.025] blur-3xl"
+          />
 
           <div className="relative">
-            <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.3em] text-[#73d9eb]">
-              <span>✦</span>
-              <span>Legal</span>
-            </div>
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#73d9eb]">
+              Legal
+            </p>
 
-            <div className="mt-5 flex items-center gap-4">
-              <span className="h-px w-16 bg-gradient-to-r from-[#69d9eb]/60 to-transparent" />
-
-              <span className="text-xs text-[#d0b16b]/70">✦</span>
-            </div>
-
-            <h1 className="mt-6 bg-gradient-to-r from-[#f5fafb] via-[#c4edf4] to-[#d4b66d] bg-clip-text font-serif text-5xl font-semibold tracking-tight text-transparent sm:text-6xl">
+            <h1 className="mt-5 bg-gradient-to-r from-[#f5fafb] via-[#c4edf4] to-[#d4b66d] bg-clip-text font-serif text-4xl font-medium tracking-tight text-transparent sm:text-5xl md:text-6xl">
               Terms & Conditions
             </h1>
 
-            <p className="mt-5 text-sm text-[#718da2]">
-              Last Updated: September 14, 2026
+            <p className="mt-5 text-sm text-[#8198ad]">
+              Last Updated: October 12, 2026
+            </p>
+
+            <div className="mt-8 h-px bg-gradient-to-r from-[#69d9eb]/50 via-white/[0.08] to-transparent" />
+
+            <p className="mt-7 max-w-2xl text-base leading-7 text-[#b9cbd9] sm:text-lg sm:leading-8">
+              These Terms explain the rules for using Quill & Ink, including
+              its community features, Premium access, and supporting services.
             </p>
           </div>
-        </div>
+        </header>
 
-        {/* Legal content */}
-        <div className="mt-12 space-y-12 text-[#a9bdca] leading-8">
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              1. About Quill & Ink
-            </h2>
-
-            <p className="mt-4">
-              Quill & Ink is a Discord bot providing community, moderation,
-              economy, games, automation, and other Discord server features.
-              Features may change, be added, removed, modified, or
-              discontinued over time.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              2. Discord Terms and Policies
-            </h2>
-
-            <p className="mt-4">
-              Your use of Quill & Ink is also subject to Discord&apos;s
-              applicable Terms of Service, Community Guidelines, Developer
-              Policy, and other applicable Discord rules and policies.
-            </p>
-
-            <p className="mt-4">
-              You must not use Quill & Ink in a way that violates Discord&apos;s
-              rules or policies.
-            </p>
-
-            <p className="mt-4">
-              If Discord restricts, suspends, terminates, or otherwise limits
-              your account or server, Quill & Ink is not responsible for that
-              action.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              3. Acceptable Use
-            </h2>
-
-            <p className="mt-4">
-              You agree to use Quill & Ink responsibly and only for legitimate
-              purposes.
-            </p>
-
-            <p className="mt-4">You must not use Quill & Ink to:</p>
-
-            <ul className="mt-4 space-y-3 pl-1">
-              {[
-                "Conduct, facilitate, or promote illegal activities.",
-                "Harass, threaten, abuse, or target other users.",
-                "Distribute malicious software, malware, viruses, or harmful content.",
-                "Attempt to damage, disrupt, overload, or interfere with the bot or its infrastructure.",
-                "Attempt to gain unauthorized access to Quill & Ink, its database, infrastructure, accounts, or other systems.",
-                "Attempt to bypass Premium restrictions, payment verification, access controls, rate limits, or other security mechanisms.",
-                "Exploit bugs or vulnerabilities for abuse, financial gain, or unauthorized access.",
-                "Manipulate, forge, or interfere with payment, transaction, entitlement, or webhook information.",
-                "Reverse engineer, modify, copy, or redistribute Quill & Ink or its proprietary components except where expressly permitted by applicable law.",
-                "Use automated systems or other methods to abuse the service or intentionally generate excessive traffic or requests.",
-                "Use Quill & Ink to facilitate scams, fraud, phishing, or other deceptive activity.",
-                "Use the service in a manner that could reasonably harm Quill & Ink, its users, Discord, or third-party services.",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 text-[#72d9eb]">✦</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="mt-5">
-              Finding a bug does not give you permission to exploit it. Please
-              report security issues responsibly.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              4. Server Owner and Administrator Responsibility
-            </h2>
-
-            <p className="mt-4">
-              Server owners and administrators are responsible for how Quill &
-              Ink is configured and used within their Discord servers.
-            </p>
-
-            <p className="mt-4">
-              You are responsible for ensuring that your server&apos;s use of
-              Quill & Ink complies with Discord&apos;s rules and applicable law.
-            </p>
-
-            <p className="mt-4">
-              Quill & Ink does not take responsibility for content created or
-              submitted by individual Discord users.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              5. Premium Services
-            </h2>
-
-            <p className="mt-4">
-              Quill & Ink may provide Premium features for eligible Discord
-              servers.
-            </p>
- 
-            <p className="mt-4">
-              The current Premium price is:
-            </p>
-
-            <p className="mt-4 font-serif text-2xl font-semibold text-[#d8bd78]">
-              ₹350 for 30 days of Premium access.
-            </p>
-
-            <p className="mt-4">
-              Premium access is associated with the applicable Discord server
-              and is subject to the Premium system&apos;s rules and
-              availability.
-            </p>
-
-            <p className="mt-4">
-              Premium access does not grant ownership of Quill & Ink or any of
-              its software, intellectual property, infrastructure, or
-              underlying systems.
-            </p>
-
-            <p className="mt-4">
-              Premium features may be changed, improved, restricted, or
-              discontinued when reasonably necessary.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              6. Payments
-            </h2>
-
-            <p className="mt-4">
-              Payments for Premium services are processed through our
-              third-party payment provider.
-            </p>
-
-            <p className="mt-4">
-              You are responsible for providing accurate information when
-              completing a purchase.
-            </p>
-
-            <p className="mt-4">
-              We do not store your complete payment-card or banking credentials
-              on Quill & Ink&apos;s own systems when payment processing is
-              handled by the payment provider.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              7. Refund Policy
-            </h2>
-
-            <p className="mt-4 font-medium text-[#f1f8fa]">
-              Premium purchases are generally non-refundable.
-            </p>
-
-            <p className="mt-4">
-              Once Premium access has been purchased and provisioned, we
-              generally do not provide refunds for:
-            </p>
-
-            <ul className="mt-4 space-y-3 pl-1">
-              {[
-                "Change of mind.",
-                "Failure to use the Premium features.",
-                "Unused Premium time.",
-                "Leaving or being removed from a Discord server.",
-                "Losing access to a Discord account or server.",
-                "Discord account or server restrictions.",
-                "Failure to configure or use Premium features.",
-                "Removal of a server's Premium access because of a violation of these Terms.",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 text-[#72d9eb]">✦</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="mt-5">
-              This does not limit any refund, cancellation, or consumer rights
-              that cannot legally be excluded under applicable law.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              8. Suspension and Termination
-            </h2>
-
-            <p className="mt-4">
-              We may suspend or terminate access to Quill & Ink, including
-              Premium access, if we reasonably believe that you:
-            </p>
-
-            <ul className="mt-4 space-y-3 pl-1">
-              {[
-                "Violated these Terms.",
-                "Violated Discord's applicable rules or policies.",
-                "Abused or attempted to exploit the service.",
-                "Attempted to bypass security or Premium restrictions.",
-                "Engaged in fraudulent or unlawful activity.",
-                "Created a significant risk to the service, other users, or our infrastructure.",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 text-[#72d9eb]">✦</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="mt-5">
-              Where appropriate, we may also restrict access while
-              investigating suspected abuse or security incidents.
-            </p>
-
-            <p className="mt-4">
-              Termination or suspension resulting from a violation of these
-              Terms does not automatically create a right to a refund.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              9. Service Availability
-            </h2>
-
-            <p className="mt-4">
-              We aim to keep Quill & Ink available and reliable, but we do not
-              guarantee uninterrupted service.
-            </p>
-
-            <p className="mt-4">
-              The service may occasionally be unavailable because of:
-            </p>
-
-            <ul className="mt-4 space-y-3 pl-1">
-              {[
-                "Maintenance.",
-                "Updates.",
-                "Infrastructure or hosting problems.",
-                "Discord outages or API limitations.",
-                "Third-party service failures.",
-                "Security incidents.",
-                "Circumstances beyond our reasonable control.",
-              ].map((item) => (
-                <li key={item} className="flex gap-3">
-                  <span className="mt-1 text-[#72d9eb]">✦</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="mt-5">
-              We may modify or temporarily suspend parts of the service when
-              necessary.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              10. Third-Party Services
-            </h2>
-
-            <p className="mt-4">
-              Quill & Ink may depend on third-party services, including
-              Discord, payment providers, hosting providers, databases, and
-              other infrastructure providers.
-            </p>
-
-            <p className="mt-4">
-              We are not responsible for outages, policy changes, restrictions,
-              or failures caused by third-party services.
-            </p>
-
-            <p className="mt-4">
-              Your use of third-party services remains subject to their own
-              terms and policies.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              11. Intellectual Property
-            </h2>
-
-            <p className="mt-4">
-              Quill & Ink, including its branding, software, original content,
-              design, and proprietary systems, belongs to its respective owners
-              unless otherwise stated.
-            </p>
-
-            <p className="mt-4">
-              You may use Quill & Ink through the service as intended, but such
-              use does not transfer ownership or intellectual property rights to
-              you.
-            </p>
-
-            <p className="mt-4">
-              You must not copy, sell, redistribute, or commercially exploit
-              proprietary parts of Quill & Ink without permission.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              12. User Content
-            </h2>
-
-            <p className="mt-4">
-              You retain ownership of content that you create and submit
-              through Discord.
-            </p>
-
-            <p className="mt-4">
-              By using Quill & Ink, you grant the service only the permissions
-              reasonably necessary to process that content and provide the
-              requested functionality.
-            </p>
-
-            <p className="mt-4">
-              Quill & Ink does not claim ownership of your Discord messages,
-              stories, images, or other original user content.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              13. Limitation of Liability
-            </h2>
-
-            <p className="mt-4">
-              To the extent permitted by applicable law, Quill & Ink and its
-              operators will not be responsible for indirect, incidental,
-              consequential, or other losses arising from your use of the
-              service.
-            </p>
-
-            <p className="mt-4">
-              This includes losses resulting from Discord outages, server
-              configuration mistakes, third-party service failures, loss of
-              access to a Discord account or server, or misuse of the service.
-            </p>
-
-            <p className="mt-4">
-              Nothing in these Terms excludes liability that cannot legally be
-              excluded.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              14. Changes to These Terms
-            </h2>
-
-            <p className="mt-4">
-              We may update these Terms from time to time.
-            </p>
-
-            <p className="mt-4">
-              When significant changes are made, the updated version will be
-              published on this website with a new &quot;Last Updated&quot;
-              date.
-            </p>
-
-            <p className="mt-4">
-              Continuing to use Quill & Ink after changes take effect means you
-              accept the updated Terms.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              15. Contact
-            </h2>
-
-            <p className="mt-4">
-              If you have questions regarding these Terms, Quill & Ink, or our
-              services, please contact us through the contact information
-              provided on our website.
-            </p>
-
+        <div className="mt-8 rounded-2xl border border-white/[0.07] bg-[#091b2d]/55 px-5 py-5 sm:px-7">
+          <p className="text-sm leading-7 text-[#aebfce]">
+            <span className="font-semibold text-[#f1f8fa]">
+              Using Premium?
+            </span>{" "}
+            Premium currently costs ₹350 for 30 days and does not automatically
+            renew. Please review our{" "}
             <a
-              href="https://discord.gg/v95scy728"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#537c95]/60 bg-[#0a1b2d]/70 px-5 py-2.5 text-sm font-medium text-[#eaf8fb] transition hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
+              href="/refunds"
+              className="text-[#73d9eb] underline decoration-[#73d9eb]/30 underline-offset-4 transition-colors hover:text-[#d0b16b]"
             >
-              <span className="text-[#72d9eb]">✦</span>
-              Join Support Server
+              Cancellation & Refunds Policy
+            </a>{" "}
+            before purchasing.
+          </p>
+        </div>
+
+        <div className="mt-8 space-y-5">
+          {sections.map((section) => (
+            <section
+              key={section.title}
+              className="rounded-2xl border border-white/[0.07] bg-white/[0.025] px-5 py-6 sm:px-8 sm:py-7"
+            >
+              <h2 className="font-serif text-xl font-medium leading-snug text-[#f1f8fa] sm:text-2xl">
+                {section.title}
+              </h2>
+
+              <div className="mt-4 space-y-4 text-[15px] leading-7 text-[#b4c4d2] sm:text-base sm:leading-8">
+                {section.paragraphs.map((paragraph, index) => (
+                  <p
+                    key={index}
+                    className={
+                      section.highlight && index === 0
+                        ? "font-semibold text-[#d8bd78]"
+                        : ""
+                    }
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+
+                {section.bullets && (
+                  <ul className="space-y-3 pt-1">
+                    {section.bullets.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span
+                          aria-hidden="true"
+                          className="mt-1 shrink-0 text-sm text-[#70d9eb]"
+                        >
+                          ✦
+                        </span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+
+                {section.after?.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+
+                {section.support && (
+                  <a
+                    href="https://discord.gg/v95scy728"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-flex items-center gap-2 rounded-full border border-[#537c95]/60 bg-[#0a1b2d]/70 px-5 py-2.5 text-sm font-medium text-[#eaf8fb] transition-colors hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"
+                  >
+                    <span className="text-[#72d9eb]">✦</span>
+                    Join Support Server
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                )}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        <footer className="mt-12 border-t border-white/[0.09] pt-8 text-center">
+          <div className="mx-auto mb-5 h-px w-24 bg-gradient-to-r from-transparent via-[#70d9eb]/60 to-transparent" />
+
+          <p className="font-serif text-lg text-[#dce9f4]">
+            Quill & Ink
+          </p>
+
+          <p className="mt-2 text-sm text-[#8198ad]">
+            Written for communities. Built with care.
+          </p>
+
+          <nav
+            aria-label="Legal pages"
+            className="mt-5 flex flex-wrap justify-center gap-x-5 gap-y-3 text-sm"
+          >
+            <a
+              href="/privacy"
+              className="text-[#9eb6ca] transition-colors hover:text-[#73d9eb]"
+            >
+              Privacy Policy
             </a>
-          </section>
-
-          <section>
-            <h2 className="flex items-center gap-3 font-serif text-2xl font-semibold text-[#f1f8fa]">
-              <span className="text-sm text-[#70d9eb]">✦</span>
-              16. Acceptance
-            </h2>
-
-            <p className="mt-4">
-              By adding, using, purchasing, or otherwise accessing Quill & Ink,
-              you acknowledge that you have read and agree to these Terms &
-              Conditions.
-            </p>
-
-            <p className="mt-4">
-              If you do not agree with these Terms, you should stop using Quill
-              & Ink.
-            </p>
-          </section>
-        </div>
-
-        {/* Bottom ornament */}
-        <div className="mt-16 flex items-center gap-4">
-          <span className="h-px flex-1 bg-gradient-to-r from-transparent to-[#5b849b]/25" />
-
-          <span className="text-sm text-[#70d9eb]/70">✦</span>
-
-          <span className="h-px flex-1 bg-gradient-to-l from-transparent to-[#c6a15b]/20" />
-        </div>
-
-        <div className="pb-10 pt-8 text-center text-xs uppercase tracking-[0.3em] text-[#617d92]">
-          Quill & Ink • Written for communities
-        </div>
+            <a
+              href="/refunds"
+              className="text-[#9eb6ca] transition-colors hover:text-[#73d9eb]"
+            >
+              Cancellation & Refunds
+            </a>
+            <a
+              href="/shipping"
+              className="text-[#9eb6ca] transition-colors hover:text-[#73d9eb]"
+            >
+              Shipping Policy
+            </a>
+          </nav>
+        </footer>
       </article>
     </main>
   );
