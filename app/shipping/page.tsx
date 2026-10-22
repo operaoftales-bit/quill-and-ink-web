@@ -66,15 +66,7 @@ export default function ShippingPage() {
   ];
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#061525] px-5 py-14 text-[#f4f8ff] sm:px-6 sm:py-20">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div className="absolute -left-40 top-20 h-[32rem] w-[32rem] rounded-full bg-[#176b9c]/20 blur-[140px]" />
-        <div className="absolute -right-40 top-[35%] h-[34rem] w-[34rem] rounded-full bg-[#36c9e8]/10 blur-[150px]" />
-        <div className="absolute bottom-0 left-1/2 h-[28rem] w-[42rem] -translate-x-1/2 rounded-full bg-[#c6a15b]/[0.04] blur-[140px]" />
-      </div>
+      <main className="relative min-h-screen overflow-hidden px-5 py-14 text-[#f4f8ff] sm:px-6 sm:py-20">
 
       <article className="relative mx-auto max-w-4xl">
         <a
@@ -143,7 +135,7 @@ export default function ShippingPage() {
           </p>
 
           <a
-            href="https://discord.gg/v95scy728"
+            href="https://discord.gg/3qbKqxBJDa"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-[#73d9eb] transition-colors hover:text-[#d0b16b]"

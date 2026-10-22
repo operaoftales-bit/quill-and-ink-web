@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const DISCORD_INSTALL_URL =
   "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2833847071407158&integration_type=0&scope=applications.commands+bot";
-const DISCORD_SUPPORT_URL = "https://discord.gg/v95scy728";
+const DISCORD_SUPPORT_URL = "https://discord.gg/3qbKqxBJDa";
 
 
 function SectionHeading({
@@ -36,16 +36,7 @@ function SectionHeading({
 
 export default function PricingPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#050812] text-white">
-      {/* Background atmosphere */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div className="absolute left-1/2 top-[-18rem] h-[36rem] w-[55rem] -translate-x-1/2 rounded-full bg-cyan-500/[0.09] blur-[140px]" />
-        <div className="absolute -right-40 top-[35rem] h-[28rem] w-[28rem] rounded-full bg-amber-400/[0.05] blur-[120px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(20,45,75,0.18),transparent_60%)]" />
-      </div>
+    <main className="relative min-h-screen overflow-hidden text-white">
 
       {/* Navigation */}
       <header className="relative z-10 border-b border-white/[0.07]">

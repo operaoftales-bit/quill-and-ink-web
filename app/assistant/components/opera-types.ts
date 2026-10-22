@@ -1,0 +1,17 @@
+export type OperaExpression =
+  | "happy"
+  | "excited"
+  | "curious"
+  | "surprised"
+  | "sleepy"
+  | "relaxed"
+  | "shy"
+  | "embarrassed"
+  | "mischievous"
+  | "winking"
+  | "proud"
+  | "determined"
+  | "confused"
+  | "concerned"
+  | "sad"
+  | "scribing";

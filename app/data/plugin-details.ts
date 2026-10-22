@@ -663,24 +663,25 @@ export const pluginDetails: PluginDetail[] = [
         eyebrow: "COMMUNITY • AI ASSISTANT",
         headline: "Give your server a voice of its own.",
         introduction:
-            "Opera Assistant is Quill & Ink's planned modular AI-powered server assistant, designed around knowledge that can be managed for each community.",
-        features: [
-            {
-                title: "Make your server feel alive",
-                description:
-                    "A typical AI assistant who can interact with your community in a natural way and provide helpful responses with built in knowledge.",
-            },
-            {
-                title: "Don't ask her to do your work",
-                description:
-                    "A assistant with little emotions which is perfect for lonely members.",
-            },
-            {
-                title: "Built for your community",
-                description:
-                    "Create an assistant experience shaped around the information your server actually needs.",
-            },
-        ],
+  "Meet Opera Assistant, Quill & Ink's AI-powered Discord companion. She can respond conversationally using knowledge configured for your server, helping members get useful answers in a more personal way.",
+
+features: [
+  {
+    title: "Natural AI conversations",
+    description:
+      "Give members a conversational assistant that can respond to their questions start the conversation by saying 'Hey quill or Hey ink'.",
+  },
+  {
+    title: "Knowledge shaped by your server",
+    description:
+      "Add, retrieve, list, and remove server-specific knowledge used by the assistant.",
+  },
+  {
+    title: "A companion for your community",
+    description:
+      "Bring a more personal AI assistant experience into your Discord server.",
+  },
+],
         commands: [
             {
                 command: "/assistant-knowledge set",

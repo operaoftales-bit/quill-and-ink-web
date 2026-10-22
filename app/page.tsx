@@ -1,11 +1,12 @@
 
 import type { CSSProperties } from "react";
 import Link from "next/link";
+import CommunityStats from "./components/CommunityStats";
 
 const DISCORD_INSTALL_URL =
   "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2833847071407158&integration_type=0&scope=applications.commands+bot";
 
-const DISCORD_SUPPORT_URL = "https://discord.gg/v95scy728";
+const DISCORD_SUPPORT_URL = "https://discord.gg/3qbKqxBJDa";
 
 const stars = [
   { left: "7%", top: "17%", delay: "0s" },
@@ -101,21 +102,8 @@ const sectionHeadingStyle =
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#061525] text-[#f5f7f8] selection:bg-[#65d9ee]/25 selection:text-white">
-      {/* Atmospheric background */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
-      >
-        <div className="absolute left-1/2 top-[-22rem] h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-[#174b72]/30 blur-3xl" />
-        <div className="absolute left-[8%] top-[24%] h-[24rem] w-[24rem] rounded-full bg-[#38bfd9]/[0.055] blur-3xl" />
-        <div className="absolute bottom-[-15rem] left-[-10rem] h-[32rem] w-[32rem] rounded-full bg-[#123f69]/30 blur-3xl" />
-        <div className="absolute right-[-12rem] top-[35%] h-[32rem] w-[32rem] rounded-full bg-[#315080]/15 blur-3xl" />
-        <div className="absolute right-[15%] top-[8%] h-[18rem] w-[18rem] rounded-full bg-[#c6a15b]/[0.03] blur-3xl" />
-        <div className="absolute inset-0 opacity-[0.03] [background-image:radial-gradient(#eafaff_0.6px,transparent_0.6px)] [background-size:24px_24px]" />
-      </div>
-
-      {/* Cinematic hero */}
+    <main className="min-h-screen overflow-hidden text-[#f5f7f8] selection:bg-[#65d9ee]/25 selection:text-white">
+      {/* Cinematic hero — preserved */}
       <section
         aria-labelledby="home-heading"
         className="hero-cinematic relative flex min-h-[min(900px,100svh)] items-center justify-center overflow-hidden px-5 py-24 sm:px-6 sm:py-28"
@@ -199,7 +187,6 @@ export default function Home() {
           <span>Q&amp;I</span>
         </div>
 
-        {/* Keep this content structure aligned with the existing hero CSS */}
         <div className="relative z-20 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
           <div className="hero-cinematic__division hero-cinematic__division--hero">
             <div className="flex items-center justify-center gap-3 text-[10px] uppercase tracking-[0.32em] text-[#78d9eb] sm:text-xs sm:tracking-[0.42em]">
@@ -237,7 +224,6 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Centered actions on mobile */}
           <div className="hero-cinematic__division hero-cinematic__division--actions mt-8 w-full sm:mt-10">
             <div className="flex w-full flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
               <a
@@ -281,7 +267,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Scroll cue */}
         <a
           href="#discover"
           aria-label="Scroll to discover Quill and Ink"
@@ -294,12 +279,13 @@ export default function Home() {
           />
         </a>
       </section>
-
+{/* Community statistics */}
+<CommunityStats />
       {/* Features */}
       <section
         id="discover"
         aria-labelledby="discover-heading"
-        className="relative scroll-mt-10 px-5 py-20 sm:px-8 sm:py-24 lg:py-28"
+        className="relative scroll-mt-10 px-5 py-14 sm:px-8 sm:py-16 lg:py-20"
       >
         <div
           aria-hidden="true"
@@ -309,27 +295,26 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className={sectionLabelStyle}>A little of everything</p>
-            <h2 id="discover-heading" className={`${sectionHeadingStyle} mt-5`}>
+            <h2 id="discover-heading" className={`${sectionHeadingStyle} mt-3`}>
               The tools you need.
               <br />
               <span className="bg-gradient-to-r from-[#8be0ec] via-[#c5eaf0] to-[#d4b879] bg-clip-text text-transparent">
                 The fun you didn&apos;t know you needed.
               </span>
             </h2>
-            <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#9eb5c4] sm:text-base sm:leading-8">
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#9eb5c4] sm:text-base sm:leading-7">
               Every server is different. Pick the features that suit yours,
               whether you&apos;re keeping things organised, building an
               economy, or giving members something fun to do.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-4 sm:mt-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid gap-3 sm:mt-10 sm:grid-cols-2 lg:grid-cols-4">
             {featureCards.map((feature) => (
               <article
                 key={feature.number}
-                className="group relative isolate flex min-h-[245px] flex-col overflow-hidden rounded-2xl border border-[#45647b]/30 bg-[#091a2a]/80 p-6 transition duration-300 hover:-translate-y-1 hover:border-[#73cedd]/45 hover:bg-[#0c2032]/95 sm:p-7"
+                className="group relative isolate flex min-h-[220px] flex-col overflow-hidden rounded-2xl border border-[#45647b]/30 bg-[#091a2a]/80 p-5 transition duration-300 hover:-translate-y-1 hover:border-[#73cedd]/45 hover:bg-[#0c2032]/95 sm:p-6"
               >
-                {/* Card lighting */}
                 <div
                   aria-hidden="true"
                   className={`pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br ${feature.accent} opacity-70 transition-opacity duration-300 group-hover:opacity-100`}
@@ -355,26 +340,26 @@ export default function Home() {
                   />
                 </div>
 
-                <div className="mt-8">
+                <div className="mt-6">
                   <p className="text-[9px] font-medium uppercase tracking-[0.25em] text-[#78d4e4]">
                     {feature.eyebrow}
                   </p>
-                  <h3 className="mt-3 font-serif text-xl leading-snug text-[#edf4f5] sm:text-2xl">
+                  <h3 className="mt-2 font-serif text-xl leading-snug text-[#edf4f5] sm:text-2xl">
                     {feature.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-7 text-[#a5b8c4]">
+                  <p className="mt-2 text-sm leading-6 text-[#a5b8c4]">
                     {feature.description}
                   </p>
                 </div>
 
-                <div aria-hidden="true" className="mt-auto pt-6">
+                <div aria-hidden="true" className="mt-auto pt-4">
                   <div className="h-px w-full bg-gradient-to-r from-[#71d4e4]/35 via-[#d0b16b]/15 to-transparent transition-colors duration-300 group-hover:from-[#71d4e4]/65" />
                 </div>
               </article>
             ))}
           </div>
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-7 flex justify-center sm:mt-8">
             <Link
               href="/explore"
               className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-full border border-[#64869b]/35 px-6 py-3 text-sm text-[#d8e7ec] transition duration-300 hover:border-[#d0b16b]/60 hover:bg-[#0b1e30]/75 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#79d9e9]"
@@ -394,27 +379,24 @@ export default function Home() {
       {/* Basic and Premium */}
       <section
         aria-labelledby="plans-heading"
-        className="relative border-y border-[#45647b]/20 bg-[#081827]/65 px-5 py-20 sm:px-8 sm:py-24 lg:py-28"
+        className="relative border-y border-[#45647b]/20 bg-[#081827]/65 px-5 py-14 sm:px-8 sm:py-16 lg:py-20"
       >
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(55,137,168,0.10),transparent_60%)]"
-        />
-
         <div className="relative mx-auto max-w-5xl">
           <div className="mx-auto max-w-3xl text-center">
-            <p className={sectionLabelStyle}>Start free. Go further when ready.</p>
-            <h2 id="plans-heading" className={`${sectionHeadingStyle} mt-5`}>
+            <p className={sectionLabelStyle}>
+              Start free. Go further when ready.
+            </p>
+            <h2 id="plans-heading" className={`${sectionHeadingStyle} mt-3`}>
               Find what fits your server.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#9eb5c4] sm:text-base sm:leading-8">
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#9eb5c4] sm:text-base sm:leading-7">
               Explore the Basic features first. If you want more, you can
               check out what Premium adds before making a decision.
             </p>
           </div>
 
-          <div className="mt-9 grid gap-5 md:grid-cols-2 md:gap-6">
-            <article className="group relative isolate overflow-hidden rounded-2xl border border-[#55778a]/30 bg-[#0a1b2b]/80 p-7 transition duration-300 hover:border-[#70cddd]/40 sm:p-9">
+          <div className="mt-8 grid gap-4 md:grid-cols-2 md:gap-5 lg:mt-10">
+            <article className="group relative isolate overflow-hidden rounded-2xl border border-[#55778a]/30 bg-[#0a1b2b]/80 p-5 transition duration-300 hover:border-[#70cddd]/40 sm:p-6">
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute -right-8 -top-8 -z-10 h-44 w-44 rounded-full bg-[#66d5e7]/[0.08] blur-3xl transition-opacity duration-300 group-hover:bg-[#66d5e7]/[0.13]"
@@ -423,24 +405,24 @@ export default function Home() {
               <p className="text-[10px] uppercase tracking-[0.25em] text-[#83dbe9]">
                 A good place to start
               </p>
-              <h3 className="mt-4 font-serif text-3xl text-[#f0f5f5]">
+              <h3 className="mt-3 font-serif text-3xl text-[#f0f5f5]">
                 Basic
               </h3>
-              <p className="mt-3 text-sm leading-7 text-[#a5b8c4]">
+              <p className="mt-2 text-sm leading-6 text-[#a5b8c4]">
                 Get started with the available Basic plugins and choose the
                 tools your server actually needs.
               </p>
 
               <Link
                 href="/explore"
-                className="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[#a8e7ef] transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#79d9e9]"
+                className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[#a8e7ef] transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#79d9e9]"
               >
                 Explore plugins
                 <span aria-hidden="true">→</span>
               </Link>
             </article>
 
-            <article className="group relative isolate overflow-hidden rounded-2xl border border-[#d0b16b]/35 bg-gradient-to-br from-[#19283a]/95 via-[#0c1e2e]/95 to-[#111b29]/95 p-7 transition duration-300 hover:border-[#d0b16b]/60 sm:p-9">
+            <article className="group relative isolate overflow-hidden rounded-2xl border border-[#d0b16b]/35 bg-gradient-to-br from-[#19283a]/95 via-[#0c1e2e]/95 to-[#111b29]/95 p-5 transition duration-300 hover:border-[#d0b16b]/60 sm:p-6">
               <div
                 aria-hidden="true"
                 className="pointer-events-none absolute -right-8 -top-10 -z-10 h-52 w-52 rounded-full bg-[#d0b16b]/[0.09] blur-3xl transition-opacity duration-300 group-hover:bg-[#d0b16b]/[0.14]"
@@ -455,17 +437,17 @@ export default function Home() {
                 </span>
               </div>
 
-              <h3 className="mt-4 font-serif text-3xl text-[#f5f0e4]">
+              <h3 className="mt-3 font-serif text-3xl text-[#f5f0e4]">
                 Take it further.
               </h3>
-              <p className="mt-3 text-sm leading-7 text-[#b1bec8]">
+              <p className="mt-2 text-sm leading-6 text-[#b1bec8]">
                 See which extra plugins come with Premium, what they offer,
                 and whether they&apos;re right for your community.
               </p>
 
               <Link
                 href="/pricing"
-                className="mt-7 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[#e3cc92] transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d0b16b]"
+                className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-[#e3cc92] transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d0b16b]"
               >
                 View Premium and pricing
                 <span aria-hidden="true">→</span>
@@ -476,13 +458,8 @@ export default function Home() {
       </section>
 
       {/* Closing invitation */}
-      <section className="relative px-5 py-16 sm:px-8 sm:py-20">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_100%,rgba(45,112,147,0.13),transparent_65%)]"
-        />
-
-        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-[#6f91a2]/25 bg-gradient-to-br from-[#10273a]/90 via-[#091a2a]/95 to-[#101b2a]/95 px-6 py-12 text-center shadow-[0_25px_100px_rgba(0,0,0,0.15)] sm:px-12 sm:py-16">
+      <section className="relative px-5 py-12 sm:px-8 sm:py-16 lg:py-20">
+        <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-[#6f91a2]/25 bg-gradient-to-br from-[#10273a]/90 via-[#091a2a]/95 to-[#101b2a]/95 px-5 py-8 text-center shadow-[0_25px_100px_rgba(0,0,0,0.15)] sm:px-10 sm:py-10">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute left-1/2 top-0 h-px w-2/3 -translate-x-1/2 bg-gradient-to-r from-transparent via-[#d0b16b]/70 to-transparent"
@@ -493,16 +470,18 @@ export default function Home() {
           />
 
           <div className="relative">
-            <p className={sectionLabelStyle}>Give your server a little more</p>
-            <h2 className="mx-auto mt-4 max-w-3xl font-serif text-3xl font-medium leading-tight tracking-[-0.035em] text-[#f3f4f0] sm:text-5xl">
+            <p className={sectionLabelStyle}>
+              Give your server a little more
+            </p>
+            <h2 className="mx-auto mt-3 max-w-3xl font-serif text-3xl font-medium leading-tight tracking-[-0.035em] text-[#f3f4f0] sm:text-5xl">
               Let&apos;s make your server feel like yours.
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-[#a8bdca] sm:text-base sm:leading-8">
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#a8bdca] sm:text-base sm:leading-7">
               Add Quill &amp; Ink, try out the features, and see what works
               for your community. You can start small.
             </p>
 
-            <div className="mt-7 flex w-full flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
+            <div className="mt-6 flex w-full flex-col items-center justify-center gap-3 sm:flex-row sm:gap-4">
               <a
                 href={DISCORD_INSTALL_URL}
                 target="_blank"
@@ -522,17 +501,14 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-[#819bab]">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs text-[#819bab]">
               <Link
                 href="/about"
                 className="transition-colors hover:text-white"
               >
                 About Quill &amp; Ink
               </Link>
-              <span
-                aria-hidden="true"
-                className="text-[#d0b16b]/50"
-              >
+              <span aria-hidden="true" className="text-[#d0b16b]/50">
                 ·
               </span>
               <Link
@@ -541,10 +517,7 @@ export default function Home() {
               >
                 Free and Premium
               </Link>
-              <span
-                aria-hidden="true"
-                className="text-[#d0b16b]/50"
-              >
+              <span aria-hidden="true" className="text-[#d0b16b]/50">
                 ·
               </span>
               <a
@@ -559,6 +532,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
     </main>
   );
 }

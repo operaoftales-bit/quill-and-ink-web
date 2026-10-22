@@ -1,0 +1,261 @@
+
+/* =========================================
+   OPERA — ROBOT IDLE & REACTION ANIMATIONS
+   ========================================= */
+
+.opera-glide {
+  transform-origin: center bottom;
+  will-change: transform;
+}
+
+.opera-bob {
+  width: 100%;
+  animation: opera-hover 2.8s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.opera-roaming-mascot {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 0 12px rgba(75, 220, 218, 0.18));
+}
+
+/* Gentle floating movement */
+@keyframes opera-hover {
+  0%, 100% {
+    transform: translateY(0) rotate(-0.6deg);
+  }
+
+  50% {
+    transform: translateY(-6px) rotate(0.6deg);
+  }
+}
+
+/* Subtle head movement */
+.opera-roaming-mascot .opera-head {
+  transform-box: view-box;
+  transform-origin: 160px 150px;
+  animation: opera-head-idle 4.5s ease-in-out infinite;
+}
+
+@keyframes opera-head-idle {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+
+  45% {
+    transform: rotate(-1deg);
+  }
+
+  70% {
+    transform: rotate(0.8deg);
+  }
+}
+
+/* Gentle mechanical arm adjustments */
+.opera-roaming-mascot .opera-arms {
+  transform-box: view-box;
+  transform-origin: 160px 225px;
+  animation: opera-arm-idle 3.8s ease-in-out infinite;
+}
+
+@keyframes opera-arm-idle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1px);
+  }
+}
+
+/* Soft glow from the digital face */
+.opera-roaming-mascot .opera-eyes {
+  animation: opera-eye-glow 3s ease-in-out infinite;
+}
+
+@keyframes opera-eye-glow {
+  0%, 100% {
+    opacity: 0.92;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Chat mode: settle into a steady pose */
+.opera-roaming-stage[data-mode="chatting"] .opera-bob {
+  animation: opera-chat-hover 3.5s ease-in-out infinite;
+}
+
+@keyframes opera-chat-hover {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Interactive focus */
+.opera-roaming-stage button:focus-visible {
+  outline: 2px solid #67e8f9;
+  outline-offset: 5px;
+}
+
+/* Respect accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  .opera-bob,
+  .opera-roaming-mascot .opera-head,
+  .opera-roaming-mascot .opera-arms,
+  .opera-roaming-mascot .opera-eyes {
+    animation: none !important;
+  }
+}
+
+/* Opera attentively tilts her head while chatting. */
+.opera-roaming-stage[data-mode="chatting"]
+  .opera-roaming-mascot .opera-head {
+  animation: opera-chat-attentive 1.2s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: 160px 150px;
+}
+
+@keyframes opera-chat-attentive {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+/* A tiny hop and glow when Opera receives a successful response. */
+.opera-roaming-stage[data-reaction="celebrating"]
+  .opera-roaming-mascot {
+  animation: opera-celebrate 900ms ease-out;
+}
+
+@keyframes opera-celebrate {
+  0% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 12px rgba(75, 220, 218, 0.18));
+  }
+
+  30% {
+    transform: translateY(-10px) scale(1.025);
+    filter: drop-shadow(0 0 25px rgba(75, 220, 218, 0.65));
+  }
+
+  60% {
+    transform: translateY(2px) scale(0.99);
+    filter: drop-shadow(0 0 18px rgba(75, 220, 218, 0.4));
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 12px rgba(75, 220, 218, 0.18));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .opera-roaming-stage[data-mode="chatting"]
+    .opera-roaming-mascot .opera-head,
+  .opera-roaming-stage[data-reaction="celebrating"]
+    .opera-roaming-mascot {
+    animation: none !important;
+  }
+}
+
+
+/* ==================================================
+   OPERA — EXPRESSION PERSONALITY
+   ================================================== */
+
+/* A little attitude in the head tilt */
+.opera-spirit[data-expression="curious"] .opera-head {
+  animation: opera-curious-tilt 2.4s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: 160px 150px;
+}
+
+.opera-spirit[data-expression="confused"] .opera-head {
+  animation: opera-confused-tilt 3s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: 160px 150px;
+}
+
+.opera-spirit[data-expression="sleepy"] .opera-head {
+  animation: opera-sleepy-nod 4s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: 160px 150px;
+}
+
+.opera-spirit[data-expression="excited"] .opera-eyes {
+  animation: opera-excited-eyes 1.1s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.opera-spirit[data-expression="surprised"] .opera-face {
+  animation: opera-surprised-pop 450ms ease-out;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.opera-spirit[data-expression="mischievous"] .opera-head {
+  animation: opera-mischievous-tilt 2.8s ease-in-out infinite;
+  transform-box: view-box;
+  transform-origin: 160px 150px;
+}
+
+.opera-spirit[data-expression="happy"] .opera-mouth,
+.opera-spirit[data-expression="proud"] .opera-mouth {
+  filter: drop-shadow(0 0 3px rgba(162, 247, 236, 0.35));
+}
+
+@keyframes opera-curious-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  35%, 65% { transform: rotate(-4deg); }
+}
+
+@keyframes opera-confused-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  40% { transform: rotate(4deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+@keyframes opera-sleepy-nod {
+  0%, 100% { transform: rotate(0deg); }
+  45%, 65% { transform: rotate(2deg); }
+}
+
+@keyframes opera-excited-eyes {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+}
+
+@keyframes opera-surprised-pop {
+  0% { transform: scale(0.92); }
+  65% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+@keyframes opera-mischievous-tilt {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-2deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .opera-spirit[data-expression] .opera-head,
+  .opera-spirit[data-expression] .opera-eyes,
+  .opera-spirit[data-expression] .opera-face {
+    animation: none !important;
+  }
+}

@@ -1,5 +1,6 @@
 
 import { NextResponse } from "next/server";
+import { cookies } from "next/headers";
 
 import {
     exchangeDiscordCode,
@@ -90,9 +91,18 @@ export async function GET(
             ),
         });
 
-        return NextResponse.redirect(
-            new URL("/dashboard", origin)
-        );
+       const cookieStore = await cookies();
+const returnTo =
+    cookieStore.get("quill_ink_auth_return")?.value;
+
+cookieStore.delete("quill_ink_auth_return");
+
+const destination =
+    returnTo === "/vault" ? "/vault" : "/dashboard";
+
+return NextResponse.redirect(
+    new URL(destination, origin)
+);
     } catch (error) {
         console.error(
             "[Auth] Discord OAuth callback failed.",

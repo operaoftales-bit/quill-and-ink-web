@@ -1,27 +1,9 @@
-const DISCORD_SUPPORT_URL = "https://discord.gg/v95scy728";
+const DISCORD_SUPPORT_URL = "https://discord.gg/3qbKqxBJDa";
 
 export default function ContactPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#061525] px-6 py-20 text-[#f4f8ff]">
-      {/* Atmospheric background */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -left-48 top-0 h-[36rem] w-[36rem] rounded-full bg-[#176b9c]/20 blur-[150px]" />
-        <div className="absolute right-[-12rem] top-[25%] h-[38rem] w-[38rem] rounded-full bg-[#36c9e8]/12 blur-[160px]" />
-        <div className="absolute bottom-[-12rem] left-1/2 h-[32rem] w-[46rem] -translate-x-1/2 rounded-full bg-[#c6a15b]/[0.04] blur-[150px]" />
 
-        <div className="absolute left-[8%] top-[18%] text-sm text-white/30">
-          ✦
-        </div>
-        <div className="absolute right-[10%] top-[12%] text-xs text-[#73d9eb]/40">
-          ✦
-        </div>
-        <div className="absolute left-[15%] bottom-[22%] text-xs text-[#73d9eb]/25">
-          ✦
-        </div>
-        <div className="absolute right-[18%] bottom-[14%] text-sm text-white/20">
-          ✦
-        </div>
-      </div>
+    <main className="relative min-h-screen overflow-hidden px-6 py-20 text-[#f4f8ff]">
 
       <div className="relative mx-auto max-w-5xl">
         <a

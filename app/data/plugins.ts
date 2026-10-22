@@ -256,7 +256,6 @@ export const plugins: Plugin[] = [
       "A modular AI-powered server assistant for Quill & Ink.",
     
     tag: "AI Assistant",
-    status: "unavailable",
     commands:[
         "/assistant-knowledge set",
         "/assistant-knowledge delete",

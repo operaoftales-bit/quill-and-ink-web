@@ -178,17 +178,7 @@ export default function TermsPage() {
   ];
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#061525] px-5 py-14 text-[#f5f7f8] selection:bg-[#65d9ee]/25 selection:text-white sm:px-6 sm:py-20">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div className="absolute left-1/2 top-[-20rem] h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-[#174b72]/30 blur-3xl" />
-        <div className="absolute left-[-12rem] top-[30%] h-[32rem] w-[32rem] rounded-full bg-[#38bfd9]/[0.055] blur-3xl" />
-        <div className="absolute bottom-[-18rem] right-[-10rem] h-[36rem] w-[36rem] rounded-full bg-[#123f69]/35 blur-3xl" />
-        <div className="absolute right-[12%] top-[12%] h-[20rem] w-[20rem] rounded-full bg-[#c6a15b]/[0.025] blur-3xl" />
-        <div className="absolute inset-0 opacity-[0.03] [background-image:radial-gradient(#eafaff_0.6px,transparent_0.6px)] [background-size:24px_24px]" />
-      </div>
+    <main className="relative min-h-screen overflow-hidden px-5 py-14 text-[#f5f7f8] selection:bg-[#65d9ee]/25 selection:text-white sm:px-6 sm:py-20">
 
       <article className="relative mx-auto max-w-4xl">
         <a
@@ -296,7 +286,7 @@ export default function TermsPage() {
 
                 {section.support && (
                   <a
-                    href="https://discord.gg/v95scy728"
+                    href="https://discord.gg/3qbKqxBJDa"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-2 inline-flex items-center gap-2 rounded-full border border-[#537c95]/60 bg-[#0a1b2d]/70 px-5 py-2.5 text-sm font-medium text-[#eaf8fb] transition-colors hover:border-[#6bd9eb]/70 hover:bg-[#102b43]"

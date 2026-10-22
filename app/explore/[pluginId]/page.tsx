@@ -91,26 +91,7 @@ export default async function PluginPage({
     const faq = getPluginFaq(plugin, isPremium, isUnavailable);
 
     return (
-        <main className="relative min-h-screen overflow-hidden bg-[#050812] text-white">
-            {/* Celestial background */}
-            <div
-                aria-hidden="true"
-                className="pointer-events-none absolute inset-0 overflow-hidden"
-            >
-                <div className="absolute left-1/2 top-[-18rem] h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-cyan-400/[0.035] blur-3xl" />
-
-                <div className="absolute right-[-12rem] top-[25%] h-[28rem] w-[28rem] rounded-full bg-blue-500/[0.025] blur-3xl" />
-
-                <div className="absolute bottom-[-16rem] left-[-10rem] h-[30rem] w-[30rem] rounded-full bg-indigo-500/[0.025] blur-3xl" />
-
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(5,8,18,0.18)_45%,rgba(5,8,18,0.92)_100%)]" />
-
-                <span className="absolute left-[12%] top-[18%] h-1 w-1 rounded-full bg-white/50" />
-                <span className="absolute left-[21%] top-[64%] h-1 w-1 rounded-full bg-cyan-200/30" />
-                <span className="absolute right-[18%] top-[24%] h-1 w-1 rounded-full bg-white/40" />
-                <span className="absolute right-[11%] top-[68%] h-1 w-1 rounded-full bg-cyan-200/30" />
-                <span className="absolute left-[47%] top-[12%] h-1 w-1 rounded-full bg-white/30" />
-            </div>
+       <main className="relative min-h-screen overflow-hidden text-white">
 
             {/* Navigation */}
             <nav className="relative z-10 border-b border-white/5">
@@ -272,7 +253,7 @@ export default async function PluginPage({
                                     )}
 
                                     <a
-                                        href="https://discord.gg/v95scy728"
+                                        href="https://discord.gg/3qbKqxBJDa"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/[0.025] px-6 py-3 text-sm font-medium text-slate-300 transition hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
@@ -412,7 +393,7 @@ export default async function PluginPage({
                                     </p>
 
                                     <a
-                                        href="https://discord.gg/v95scy728"
+                                        href="https://discord.gg/3qbKqxBJDa"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="mt-4 inline-flex text-sm font-medium text-cyan-200 transition hover:text-white"
@@ -544,7 +525,7 @@ export default async function PluginPage({
                                 </p>
 
                                 <a
-                                    href="https://discord.gg/v95scy728"
+                                    href="https://discord.gg/3qbKqxBJDa"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="mt-4 inline-flex text-sm font-medium text-cyan-200 transition hover:text-white"
@@ -626,7 +607,7 @@ export default async function PluginPage({
 
                                         {index === 4 && (
                                             <a
-                                                href="https://discord.gg/v95scy728"
+                                                href="https://discord.gg/3qbKqxBJDa"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="mt-3 inline-flex text-sm font-medium text-cyan-200 transition hover:text-white"

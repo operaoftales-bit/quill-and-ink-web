@@ -143,16 +143,8 @@ export default function PrivacyPage() {
   ];
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#061525] px-5 py-14 text-[#f4f8ff] sm:px-6 sm:py-20">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 overflow-hidden"
-      >
-        <div className="absolute -left-40 top-20 h-96 w-96 rounded-full bg-cyan-500/[0.07] blur-3xl" />
-        <div className="absolute -right-40 top-[35rem] h-[30rem] w-[30rem] rounded-full bg-blue-500/[0.06] blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 h-80 w-80 rounded-full bg-amber-400/[0.035] blur-3xl" />
-      </div>
-
+   <main className="relative min-h-screen overflow-hidden px-5 py-14 text-[#f4f8ff] sm:px-6 sm:py-20">
+     
       <article className="relative mx-auto max-w-4xl">
         <a
           href="/"
@@ -227,7 +219,7 @@ export default function PrivacyPage() {
           </p>
 
           <a
-            href="https://discord.gg/v95scy728"
+            href="https://discord.gg/3qbKqxBJDa"
             target="_blank"
             rel="noreferrer"
             className="mt-5 inline-flex text-sm text-cyan-300 transition-colors hover:text-cyan-100"

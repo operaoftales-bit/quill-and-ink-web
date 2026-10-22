@@ -2085,3 +2085,471 @@ body {
     animation: none !important;
   }
 }
+
+
+
+/* =========================================================
+   QUILL & INK — SHARED SITE ATMOSPHERE
+   Dark, atmospheric, gently animated celestial background.
+   ========================================================= */
+
+.site-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  isolation: isolate;
+  pointer-events: none;
+  background: #061321;
+}
+
+/* Atmospheric light: intentionally darker than the homepage. */
+
+.site-background__nebula {
+  position: absolute;
+  inset: -22%;
+  pointer-events: none;
+  will-change: transform;
+  filter: blur(85px);
+}
+
+.site-background__nebula--cyan {
+  background: radial-gradient(
+    ellipse at 28% 32%,
+    rgba(51, 174, 204, 0.075) 0%,
+    rgba(35, 112, 151, 0.035) 32%,
+    transparent 60%
+  );
+
+  animation: site-nebula-cyan 32s ease-in-out infinite alternate;
+}
+
+.site-background__nebula--blue {
+  background: radial-gradient(
+    ellipse at 76% 48%,
+    rgba(61, 91, 155, 0.075) 0%,
+    rgba(32, 70, 115, 0.035) 34%,
+    transparent 64%
+  );
+
+  animation: site-nebula-blue 38s ease-in-out infinite alternate;
+}
+
+.site-background__nebula--gold {
+  background: radial-gradient(
+    ellipse at 53% 82%,
+    rgba(193, 157, 83, 0.035) 0%,
+    rgba(135, 104, 57, 0.015) 32%,
+    transparent 60%
+  );
+
+  animation: site-nebula-gold 42s ease-in-out infinite alternate;
+}
+
+/* Distant stars remain stationary while shooting stars travel. */
+
+.site-background__stars {
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+
+  background-image:
+    radial-gradient(circle at 7% 16%, rgba(255, 255, 255, 0.42) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 17% 68%, rgba(115, 217, 235, 0.3) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 26% 35%, rgba(255, 248, 220, 0.22) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 38% 83%, rgba(255, 255, 255, 0.28) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 47% 14%, rgba(115, 217, 235, 0.3) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 59% 57%, rgba(255, 255, 255, 0.24) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 69% 23%, rgba(218, 190, 118, 0.25) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 78% 76%, rgba(255, 255, 255, 0.3) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 88% 42%, rgba(115, 217, 235, 0.28) 0 1px, transparent 1.6px),
+    radial-gradient(circle at 95% 89%, rgba(218, 190, 118, 0.2) 0 1px, transparent 1.5px);
+}
+
+/* Separate layer for diagonal falling stars. */
+
+.site-background__shooting-stars {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.site-background__shooting-star {
+  position: absolute;
+  top: var(--shooting-top);
+  left: var(--shooting-left);
+  width: var(--shooting-size);
+  height: var(--shooting-size);
+  border-radius: 50%;
+
+  background: rgba(227, 248, 255, 0.95);
+
+  box-shadow:
+    0 0 4px rgba(255, 255, 255, 0.55),
+    0 0 10px rgba(91, 210, 255, 0.2);
+
+  opacity: 0;
+  will-change: transform, opacity;
+
+  animation: site-shooting-star-fall
+    var(--shooting-duration)
+    cubic-bezier(0.38, 0.04, 0.7, 0.48)
+    var(--shooting-delay)
+    infinite;
+}
+
+/* Trail extends behind the star, toward the upper-left. */
+
+.site-background__shooting-star::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+
+  width: var(--shooting-trail);
+  height: 1px;
+
+  transform: translateY(-50%) rotate(45deg);
+  transform-origin: right center;
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(91, 210, 255, 0.08) 28%,
+    rgba(151, 226, 245, 0.38) 72%,
+    rgba(237, 250, 255, 0.78) 100%
+  );
+
+  filter: blur(0.5px);
+}
+
+/* Different starting points, speeds, and trail lengths. */
+
+.site-background__shooting-star--1 {
+  --shooting-top: 3%;
+  --shooting-left: 5%;
+  --shooting-size: 2px;
+  --shooting-trail: 65px;
+  --shooting-duration: 8s;
+  --shooting-delay: -2s;
+}
+
+.site-background__shooting-star--2 {
+  --shooting-top: 0%;
+  --shooting-left: 27%;
+  --shooting-size: 1.5px;
+  --shooting-trail: 48px;
+  --shooting-duration: 11s;
+  --shooting-delay: -7s;
+}
+
+.site-background__shooting-star--3 {
+  --shooting-top: 13%;
+  --shooting-left: 0%;
+  --shooting-size: 2px;
+  --shooting-trail: 75px;
+  --shooting-duration: 10s;
+  --shooting-delay: -4s;
+}
+
+.site-background__shooting-star--4 {
+  --shooting-top: 24%;
+  --shooting-left: 9%;
+  --shooting-size: 1.5px;
+  --shooting-trail: 42px;
+  --shooting-duration: 12s;
+  --shooting-delay: -10s;
+}
+
+.site-background__shooting-star--5 {
+  --shooting-top: 0%;
+  --shooting-left: 53%;
+  --shooting-size: 2px;
+  --shooting-trail: 70px;
+  --shooting-duration: 9s;
+  --shooting-delay: -5s;
+}
+
+.site-background__shooting-star--6 {
+  --shooting-top: 38%;
+  --shooting-left: 0%;
+  --shooting-size: 1.5px;
+  --shooting-trail: 50px;
+  --shooting-duration: 13s;
+  --shooting-delay: -8s;
+}
+
+.site-background__shooting-star--7 {
+  --shooting-top: 8%;
+  --shooting-left: 71%;
+  --shooting-size: 1.5px;
+  --shooting-trail: 44px;
+  --shooting-duration: 11s;
+  --shooting-delay: -3s;
+}
+
+.site-background__shooting-star--8 {
+  --shooting-top: 56%;
+  --shooting-left: 2%;
+  --shooting-size: 2px;
+  --shooting-trail: 62px;
+  --shooting-duration: 10s;
+  --shooting-delay: -9s;
+}
+
+.site-background__shooting-star--9 {
+  --shooting-top: 0%;
+  --shooting-left: 87%;
+  --shooting-size: 1.5px;
+  --shooting-trail: 46px;
+  --shooting-duration: 14s;
+  --shooting-delay: -6s;
+}
+
+.site-background__shooting-star--10 {
+  --shooting-top: 72%;
+  --shooting-left: 0%;
+  --shooting-size: 1.5px;
+  --shooting-trail: 40px;
+  --shooting-duration: 12s;
+  --shooting-delay: -11s;
+}
+
+.site-background__shooting-star--11 {
+  --shooting-top: 17%;
+  --shooting-left: 42%;
+  --shooting-size: 2px;
+  --shooting-trail: 58px;
+  --shooting-duration: 9s;
+  --shooting-delay: -1s;
+}
+
+.site-background__shooting-star--12 {
+  --shooting-top: 0%;
+  --shooting-left: 13%;
+  --shooting-size: 1.5px;
+  --shooting-trail: 52px;
+  --shooting-duration: 15s;
+  --shooting-delay: -12s;
+}
+
+@keyframes site-shooting-star-fall {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.45);
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 0.7;
+  }
+
+  20% {
+    opacity: 0.85;
+  }
+
+  82% {
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: translate3d(85vw, 85vh, 0) scale(0.7);
+    opacity: 0;
+  }
+}
+
+.site-background__veil {
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(
+    ellipse at 50% 38%,
+    transparent 0%,
+    rgba(3, 13, 25, 0.12) 55%,
+    rgba(3, 13, 25, 0.4) 100%
+  );
+}
+
+/* Gentle nebula movement. */
+
+@keyframes site-nebula-cyan {
+  from {
+    transform: translate3d(-1.5%, -1%, 0) scale(1);
+  }
+
+  to {
+    transform: translate3d(2%, 1.5%, 0) scale(1.06);
+  }
+}
+
+@keyframes site-nebula-blue {
+  from {
+    transform: translate3d(1.5%, 1%, 0) scale(1.04);
+  }
+
+  to {
+    transform: translate3d(-2%, -1.5%, 0) scale(0.98);
+  }
+}
+
+@keyframes site-nebula-gold {
+  from {
+    transform: translate3d(-1%, 1.5%, 0) scale(0.98);
+  }
+
+  to {
+    transform: translate3d(1.5%, -1%, 0) scale(1.05);
+  }
+}
+
+/* Accessibility and smaller screens. */
+
+@media (prefers-reduced-motion: reduce) {
+  .site-background__nebula,
+  .site-background__shooting-star {
+    animation: none !important;
+  }
+
+  .site-background__shooting-star {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-background__nebula {
+    filter: blur(65px);
+  }
+
+  .site-background__stars {
+    opacity: 0.32;
+  }
+
+  .site-background__shooting-star--4,
+  .site-background__shooting-star--7,
+  .site-background__shooting-star--10 {
+    display: none;
+  }
+}
+
+/* Fixed stars that twinkle independently */
+.site-background__twinkle-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.site-background__twinkle-star {
+  position: absolute;
+  width: var(--twinkle-size, 1px);
+  height: var(--twinkle-size, 1px);
+  border-radius: 50%;
+  background: #eafaff;
+  opacity: 0.25;
+  box-shadow:
+    0 0 4px rgba(183, 237, 255, 0.5),
+    0 0 10px rgba(103, 208, 239, 0.15);
+  animation: site-star-twinkle
+    var(--twinkle-duration, 4s)
+    ease-in-out
+    var(--twinkle-delay, 0s)
+    infinite alternate;
+  will-change: opacity, transform;
+}
+
+@keyframes site-star-twinkle {
+  0% {
+    opacity: 0.18;
+    transform: scale(0.75);
+  }
+
+  45% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: scale(1.35);
+  }
+}
+
+/* Constellations: quiet, thin lines with softly glowing stars */
+.site-background__constellations {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.site-background__constellation {
+  fill: rgba(174, 231, 255, 0.8);
+  stroke: rgba(106, 190, 225, 0.27);
+  stroke-width: 0.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  animation: site-constellation-glow 8s ease-in-out infinite alternate;
+}
+
+.site-background__constellation polyline {
+  fill: none;
+}
+
+.site-background__constellation circle {
+  stroke: rgba(169, 230, 255, 0.28);
+  stroke-width: 0.7;
+}
+
+.site-background__constellation--two {
+  animation-delay: -3s;
+}
+
+.site-background__constellation--three {
+  animation-delay: -5s;
+}
+
+.site-background__constellation--four {
+  animation-delay: -1.5s;
+}
+
+@keyframes site-constellation-glow {
+  0% {
+    opacity: 0.35;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Keep the sky subtle on smaller screens */
+@media (max-width: 640px) {
+  .site-background__constellations {
+    opacity: 0.35;
+  }
+
+  .site-background__twinkle-star {
+    box-shadow: 0 0 5px rgba(103, 208, 239, 0.2);
+  }
+}
+
+/* Respect visitors who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .site-background__twinkle-star,
+  .site-background__constellation {
+    animation: none !important;
+  }
+
+  .site-background__twinkle-star {
+    opacity: 0.45;
+    transform: none;
+  }
+
+  .site-background__constellation {
+    opacity: 0.5;
+  }
+}

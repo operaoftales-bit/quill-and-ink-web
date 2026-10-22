@@ -4,7 +4,7 @@ import Link from "next/link";
 const DISCORD_INSTALL_URL =
   "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2833847071407158&integration_type=0&scope=applications.commands+bot";
 
-const DISCORD_SUPPORT_URL = "https://discord.gg/v95scy728";
+const DISCORD_SUPPORT_URL = "https://discord.gg/3qbKqxBJDa";
 
 const exploreLinks = [
   {
@@ -60,20 +60,8 @@ const informationLinks = [
 
 export default function AboutPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#040d18] text-[#f4f8ff]">
-      {/* Background */}
-      <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/2 top-[-20rem] h-[44rem] w-[44rem] -translate-x-1/2 rounded-full bg-[#176b9c]/20 blur-[150px]" />
-
-        <div className="absolute -left-56 top-[30%] h-[34rem] w-[34rem] rounded-full bg-[#176b9c]/10 blur-[150px]" />
-
-        <div className="absolute -right-56 top-[50%] h-[38rem] w-[38rem] rounded-full bg-[#36c9e8]/[0.04] blur-[160px]" />
-
-        <div className="absolute bottom-[-18rem] left-1/2 h-[40rem] w-[52rem] -translate-x-1/2 rounded-full bg-[#c6a15b]/[0.05] blur-[160px]" />
-
-        <div className="absolute inset-0 opacity-[0.02] [background-image:radial-gradient(#eafaff_0.6px,transparent_0.6px)] [background-size:26px_26px]" />
-      </div>
-
+    <main className="relative min-h-screen overflow-hidden text-[#f4f8ff]">
+      
       {/* Navigation */}
       <nav
         aria-label="Main navigation"
