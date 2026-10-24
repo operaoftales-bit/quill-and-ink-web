@@ -1,3 +1,10 @@
+
+/* =========================================
+   QUILL & INK — OPERA LOGO INTRO
+   Centered logo, Opera mascot, and tagline.
+   No plugin cards.
+   ========================================= */
+
 .opera-logo-test {
   width: 100%;
   max-width: 900px;
@@ -19,240 +26,6 @@
 }
 
 /* =========================================
-   OPERA MASCOT
-   ========================================= */
-
-.opera-scene-mascot {
-  position: absolute;
-  z-index: 2;
-  left: -25%;
-  bottom: 5%;
-  width: clamp(125px, 24%, 205px);
-  opacity: 0;
-  transform: translateX(-50%);
-  transform-origin: 50% 85%;
-  animation: opera-entrance 14s ease-in-out infinite;
-}
-
-.opera-scene-mascot svg {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-/* =========================================
-   QUILL & INK LOGO
-   ========================================= */
-
-.opera-scene-logo {
-  position: absolute;
-  z-index: 1;
-  left: -25%;
-  top: 43%;
-  width: min(29%, 230px);
-  aspect-ratio: 1;
-  opacity: 0;
-  transform: translate(-50%, -50%) scale(0.9);
-  animation: opera-logo-arrival 14s ease-in-out infinite;
-}
-
-.opera-scene-logo-image {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-/* =========================================
-   TAGLINE
-   ========================================= */
-
-.opera-scene-tagline {
-  position: absolute;
-  z-index: 3;
-  left: 34%;
-  bottom: 6%;
-  width: 60%;
-  margin: 0;
-  color: #a2f7ec;
-  text-align: center;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(11px, 1.8vw, 18px);
-  letter-spacing: 0.06em;
-  opacity: 0;
-  transform: translate(-50%, 8px);
-  animation: opera-tagline-arrival 14s ease-in-out infinite;
-}
-
-.opera-logo-instructions {
-  margin: 14px 0 0;
-  color: #94a3b8;
-  font-size: 12px;
-  text-align: center;
-}
-
-/* =========================================
-   OPERA INTRO TIMELINE
-   Opera and logo remain left of the plugin wall.
-   ========================================= */
-
-@keyframes opera-entrance {
-  /* Start outside the scene */
-  0%, 100% {
-    left: -25%;
-    opacity: 0;
-    transform: translateX(-50%) rotate(0deg) scale(0.96);
-  }
-
-  /* Enter from the left */
-  7% {
-    left: -12%;
-    opacity: 1;
-    transform: translateX(-50%) rotate(-5deg) scale(0.98);
-  }
-
-  /* Stop to explore the scene */
-  20%, 25% {
-    left: 39%;
-    opacity: 1;
-    transform: translateX(-50%) rotate(0deg) scale(1);
-  }
-
-  /* Look around */
-  29% {
-    left: 39%;
-    opacity: 1;
-    transform: translateX(-50%) rotate(-6deg) scale(1);
-  }
-
-  33% {
-    left: 39%;
-    opacity: 1;
-    transform: translateX(-50%) rotate(6deg) scale(1);
-  }
-
-  37% {
-    left: 39%;
-    opacity: 1;
-    transform: translateX(-50%) rotate(0deg) scale(1);
-  }
-
-  /* Turn around */
-  41% {
-    left: 39%;
-    opacity: 1;
-    transform: translateX(-50%) scaleX(-1) rotate(0deg);
-  }
-
-  /* Head back towards the left edge */
-  45% {
-    left: 25%;
-    opacity: 1;
-    transform: translateX(-50%) scaleX(-1) rotate(0deg);
-  }
-
-  /* Exit through the left */
-  50% {
-    left: -25%;
-    opacity: 0;
-    transform: translateX(-50%) scaleX(-1);
-  }
-
-  50%, 55% {
-    left: -25%;
-    opacity: 0;
-  }
-
-  /* Return with the logo */
-  60% {
-    left: -12%;
-    opacity: 1;
-    transform: translateX(-50%) scaleX(-1) rotate(0deg);
-  }
-
-  /* Push the logo into position */
-  70% {
-    left: 32%;
-    opacity: 1;
-    transform: translateX(-50%) scaleX(-1) rotate(-6deg);
-  }
-
-  /* Settle beside the logo */
-  78% {
-    left: 50%;
-    opacity: 1;
-    transform: translateX(-50%) scaleX(-1) rotate(0deg);
-  }
-
-  82%, 91% {
-    left: 50%;
-    opacity: 1;
-    transform: translateX(-50%) scaleX(-1) rotate(0deg);
-  }
-
-  /* Fade out at the end of the loop */
-  96% {
-    left: 50%;
-    opacity: 0;
-    transform: translateX(-50%) scaleX(-1);
-  }
-}
-
-@keyframes opera-logo-arrival {
-  /* Hidden until Opera returns */
-  0%, 57%, 100% {
-    left: -30%;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.92);
-  }
-
-  /* Logo enters from the left */
-  61% {
-    left: -12%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(0.92);
-  }
-
-  /* Opera pushes it inward */
-  70% {
-    left: 20%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(0.96);
-  }
-
-  /* Reach the final position */
-  78% {
-    left: 25%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1.04);
-  }
-
-  82%, 91% {
-    left: 25%;
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  96% {
-    left: 25%;
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.98);
-  }
-}
-
-@keyframes opera-tagline-arrival {
-  0%, 80%, 100% {
-    opacity: 0;
-    transform: translate(-50%, 8px);
-  }
-
-  85%, 91% {
-    opacity: 1;
-    transform: translate(-50%, 0);
-  }
-}
-
-/* =========================================
    STARFIELD
    ========================================= */
 
@@ -264,7 +37,6 @@
   pointer-events: none;
 }
 
-/* Stars that remain in place */
 .opera-fixed-stars {
   position: absolute;
   inset: -50%;
@@ -277,7 +49,6 @@
   opacity: 0.7;
 }
 
-/* Twinkling stars */
 .opera-twinkle {
   position: absolute;
   color: #fff;
@@ -306,7 +77,8 @@
 }
 
 @keyframes opera-twinkle {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.25;
     transform: scale(0.8);
   }
@@ -318,96 +90,206 @@
 }
 
 /* =========================================
-   SCROLLING PLUGIN WALL
-   Fixed on the right for the entire animation.
-   Opera and the logo never cross into it.
+   OPERA MASCOT
+   Opera enters from the left and settles
+   beside the centered logo.
    ========================================= */
 
-.opera-plugin-labels {
+.opera-scene-mascot {
   position: absolute;
-  z-index: 4;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 31%;
-  overflow: hidden;
-  pointer-events: none;
-  opacity: 1;
-
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 12%,
-    black 88%,
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    transparent 0%,
-    black 12%,
-    black 88%,
-    transparent 100%
-  );
+  z-index: 2;
+  left: 18%;
+  bottom: 13%;
+  width: clamp(115px, 24%, 200px);
+  opacity: 0;
+  transform: translate(-50%, 12px) scale(0.94);
+  transform-origin: 50% 85%;
+  animation: opera-entrance 14s ease-in-out infinite;
 }
 
-/*
-  The track should contain two identical copies
-  of the plugin list so the credits can loop.
-*/
-
-.opera-plugin-track {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  gap: 10px;
-  padding: 12px 8px;
-
-  animation: opera-plugin-scroll 14s linear infinite;
-  will-change: transform;
-}
-
-/* Cards travel downward throughout the 14-second scene */
-@keyframes opera-plugin-scroll {
-  from {
-    transform: translateY(-50%);
-  }
-
-  to {
-    transform: translateY(0);
-  }
-}
-
-/* Individual plugin cards */
-.opera-plugin {
+.opera-scene-mascot svg {
   display: block;
-  flex: 0 0 auto;
-  box-sizing: border-box;
   width: 100%;
-  padding: 10px 5px;
+  height: auto;
+}
 
-  border: 1px solid rgb(85 196 187 / 35%);
-  border-radius: 10px;
-  background: rgb(6 21 37 / 90%);
+/* =========================================
+   QUILL & INK LOGO
+   The logo settles in the center.
+   ========================================= */
 
+.opera-scene-logo {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 43%;
+  width: min(34%, 250px);
+  aspect-ratio: 1;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.78);
+  animation: opera-logo-arrival 14s ease-in-out infinite;
+}
+
+.opera-scene-logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* =========================================
+   TAGLINE
+   ========================================= */
+
+.opera-scene-tagline {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 10%;
+  width: 90%;
+  margin: 0;
   color: #a2f7ec;
   text-align: center;
-  font-size: clamp(9px, 1.1vw, 12px);
-  letter-spacing: 0.02em;
-  white-space: nowrap;
-
-  box-shadow: 0 0 12px rgb(40 127 131 / 8%);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(12px, 1.9vw, 18px);
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  animation: opera-tagline-arrival 14s ease-in-out infinite;
 }
 
-/* Restrained gold accents */
-.opera-plugin:nth-child(4n + 3),
-.opera-plugin:nth-child(4n + 5) {
-  color: #e8bd63;
-  border-color: rgb(232 189 99 / 40%);
+.opera-logo-instructions {
+  margin: 14px 0 0;
+  color: #94a3b8;
+  font-size: 12px;
+  text-align: center;
 }
 
-.opera-plugin-star {
-  margin-right: 5px;
-  color: #e8bd63;
+/* =========================================
+   INTRO TIMELINE
+   0–20%: Opera enters.
+   20–35%: Opera settles; logo appears.
+   35–50%: Logo and Opera remain visible.
+   50–84%: Final composition holds.
+   84–100%: Fade out before looping.
+   ========================================= */
+
+@keyframes opera-entrance {
+  0% {
+    left: 5%;
+    opacity: 0;
+    transform: translate(-50%, 12px) scale(0.94);
+  }
+
+  8% {
+    left: 10%;
+    opacity: 1;
+    transform: translate(-50%, 0) scale(0.98);
+  }
+
+  20% {
+    left: 24%;
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+
+  28% {
+    left: 24%;
+    opacity: 1;
+    transform: translate(-50%, 0) rotate(-5deg) scale(1);
+  }
+
+  32% {
+    left: 24%;
+    opacity: 1;
+    transform: translate(-50%, 0) rotate(5deg) scale(1);
+  }
+
+  36%,
+  48% {
+    left: 24%;
+    opacity: 1;
+    transform: translate(-50%, 0) rotate(0deg) scale(1);
+  }
+
+  55% {
+    left: 24%;
+    opacity: 1;
+    transform: translate(-50%, 0) rotate(0deg) scale(1);
+  }
+
+  70%,
+  84% {
+    left: 24%;
+    opacity: 1;
+    transform: translate(-50%, 0) rotate(0deg) scale(1);
+  }
+
+  94% {
+    left: 24%;
+    opacity: 0;
+    transform: translate(-50%, -5px) scale(0.98);
+  }
+
+  100% {
+    left: 24%;
+    opacity: 0;
+    transform: translate(-50%, 12px) scale(0.94);
+  }
+}
+
+@keyframes opera-logo-arrival {
+  0%,
+  18% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.78);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+
+  38%,
+  84% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  94% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.97);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.78);
+  }
+}
+
+@keyframes opera-tagline-arrival {
+  0%,
+  40% {
+    opacity: 0;
+    transform: translate(-50%, 8px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  84% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  94%,
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 5px);
+  }
 }
 
 /* =========================================
@@ -415,37 +297,30 @@
    ========================================= */
 
 @media (max-width: 560px) {
-  .opera-plugin-labels {
-    width: 32%;
-  }
-
-  .opera-plugin-track {
-    gap: 7px;
-    padding: 8px 5px;
-  }
-
-  .opera-plugin {
-    padding: 8px 2px;
-    font-size: 9px;
-    letter-spacing: 0;
-  }
-
-  .opera-plugin-star {
-    margin-right: 3px;
-  }
-
-  .opera-scene-tagline {
-    left: 33%;
-    width: 62%;
-    font-size: 11px;
+  .opera-logo-scene {
+    min-height: 260px;
   }
 
   .opera-scene-mascot {
-    width: clamp(100px, 23%, 155px);
+    width: clamp(95px, 25%, 145px);
+    left: 23%;
+    bottom: 16%;
   }
 
   .opera-scene-logo {
-    width: min(27%, 170px);
+    width: min(40%, 175px);
+    top: 42%;
+  }
+
+  .opera-scene-tagline {
+    bottom: 8%;
+    width: 94%;
+    font-size: 11px;
+    letter-spacing: 0.04em;
+  }
+
+  .opera-twinkle {
+    font-size: 12px;
   }
 }
 
@@ -458,22 +333,22 @@
   .opera-scene-logo,
   .opera-scene-tagline {
     animation: none;
+    opacity: 1;
   }
 
   .opera-scene-mascot {
-    left: 50%;
-    opacity: 1;
-    transform: translateX(-50%) scaleX(-1);
+    left: 24%;
+    bottom: 13%;
+    transform: translate(-50%, 0);
   }
 
   .opera-scene-logo {
-    left: 25%;
-    opacity: 1;
+    left: 50%;
+    top: 43%;
     transform: translate(-50%, -50%);
   }
 
   .opera-scene-tagline {
-    opacity: 1;
     transform: translate(-50%, 0);
   }
 
@@ -487,21 +362,6 @@
   }
 
   .opera-shooting-star {
-    display: none;
-  }
-
-  .opera-plugin-labels {
-    opacity: 1;
-    -webkit-mask-image: none;
-    mask-image: none;
-  }
-
-  .opera-plugin-track {
-    animation: none;
-    transform: none;
-  }
-
-  .opera-plugin-track .opera-plugin:nth-child(n + 6) {
     display: none;
   }
 }

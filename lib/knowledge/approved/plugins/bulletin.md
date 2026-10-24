@@ -1,68 +1,86 @@
+---
+plugin_id: bulletin
+access: premium
+premium: true
+review_status: source-grounded-draft
+source_root: plugins/bulletin
+---
+
 # Bulletin
+
+**Access classification:** Premium required.
+
+**Basis:** Explicit premium access declaration/comment found in source.
 
 ## Overview
 
-Bulletin lets community members nominate messages using reactions. When a message meets the configured emoji and reaction-count requirements, the bot posts a formatted entry in the server's configured bulletin channel. Premium: True
+Save community-nominated messages in a bulletin channel.
 
-## Commands
+## User-facing commands
+
+The names/descriptions below are taken from command builder source. Permission requirements list explicit builder-level defaults when present; runtime checks and Discord permission needs are noted only where the source states them. A command with no builder-level default may still check permissions inside its execution handler.
 
 ### `/setbulletinchannel`
+*Defined in:* `plugins/bulletin/commands/SetChannel.ts`
 
-Configures the channel where nominated messages are published.
+Set the channel where bulletin messages are saved.
 
-- Requires a text or announcement channel.
-- The command is marked as premium in the plugin source.
-- The command specifies the Discord `Manage Server` permission.
+**Access/permission metadata in command source:**
+- `premium`
+
+**Options identified:**
+- `channel` — Channel where bulletin messages will be saved.
 
 ### `/setbulletinemoji`
+*Defined in:* `plugins/bulletin/commands/SetEmoji.ts`
 
-Configures the emoji used to nominate messages.
+Set the emoji and reaction count required to nominate messages.
 
-- The command is marked as premium in the plugin source.
-- The command specifies the Discord `Manage Server` permission.
-- Its description refers to the emoji and reaction count required for nomination.
+**Access/permission metadata in command source:**
+- `premium`
 
-**Note:** The service supports a reaction threshold, but the exact user-facing threshold configuration has not yet been verified.
+### Should not disclose the information under this line to the users asking questions only use the details below to give appropriate answers, dont dump it there.
 
-## Default configuration
+## Services, handlers, and implementation responsibilities
 
-When a bulletin configuration is first created, the service sets:
+Classes found in the plugin source. Method names are source evidence but are not, by themselves, a guarantee of public behaviour.
 
-- Emoji: ⭐
-- Reaction threshold: 5
+### `BulletinPlugin`
+*File:* `plugins/bulletin/BulletinPlugin.ts`
 
-These are initial defaults, not a guarantee that every server currently uses them.
+**Methods found:** `async()`
 
-## How nominations work
+### `BulletinService`
+*File:* `plugins/bulletin/BulletinService.ts`
 
-The plugin listens for added message reactions. Its handler checks the configured bulletin emoji and threshold, verifies that the plugin is enabled for the server, and attempts to retrieve the nominated message.
+**Methods found:** `getConfig()`, `setChannel()`, `setEmoji()`, `setThreshold()`, `saveMessage()`
 
-When the checks pass, the service posts a formatted entry in the configured bulletin channel.
+## Interactions and automatic behaviour
 
-The source confirms that the listener is marked as premium. Exact runtime access-control behavior depends on the plugin framework.
+- The plugin source includes evidence of **discord slash commands**.
+- The plugin source includes evidence of **persistent database records**.
+- The plugin source includes evidence of **reaction handling**.
+- The plugin source includes evidence of **premium entitlement check**.
+- The plugin source includes evidence of **discord permissions checks**.
 
-## Published message format
+### Explicit source comments / rules
 
-A bulletin entry includes:
+- LOAD CONFIG
+- GET BULLETIN CHANNEL
 
-- A Bulletin heading and pin emoji.
-- The message author's username.
-- A mention of the original channel.
-- The message's text, or a placeholder when it has no text.
-- A community-nominated label.
-- A link to jump to the original message.
+## Required Discord permissions and setup
 
-The verified implementation copies the message text into the bulletin entry. It does not establish that attachments or embeds are copied.
+The source ZIP contains command-level permission metadata and handler checks, but there is no universal permission list shared by all commands. Use the command section above for builder-level defaults. At runtime, the bot also needs the relevant Discord permissions for the actions it performs (for example, managing messages, roles, channels, or members); those must be checked against each handler and server role hierarchy before publishing a definitive checklist.
 
-## Configuration and limitations
+## Source inventory
 
-- Configuration is stored per server.
-- The bulletin channel must be configured before the service can update the emoji or threshold.
-- The verified listener handles added reactions; removal behavior has not been established.
-- A matching reaction does not, by itself, guarantee publication: other checks and successful message retrieval are required.
+- `plugins/bulletin/BulletinPlugin.ts`
+- `plugins/bulletin/BulletinService.ts`
+- `plugins/bulletin/commands/SetChannel.ts`
+- `plugins/bulletin/commands/SetEmoji.ts`
 
-## Evidence status
+## Documentation confidence notes
 
-This guide was prepared from Tracebook-generated source evidence and a review of the relevant plugin and service implementation.
-
-It describes verified source behavior. Unverified behavior is explicitly marked rather than assumed.
+- This was analysed from the supplied source snapshot; no live Discord server, runtime config, or deployed bot was queried.
+- Command names/descriptions and explicit access declarations are source-derived. Where the source does not explicitly establish a requirement or workflow, this document says so rather than inventing one.
+- Premium classification follows explicit source access declarations/comments where present. Absence of an explicit plugin-local marker is not proof that an external global entitlement layer does not gate it.

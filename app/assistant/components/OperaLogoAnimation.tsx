@@ -22,45 +22,6 @@ export default function OperaLogoAnimation() {
   <span className="opera-shooting-star shooting-two" />
 </div>
 
-
-<div className="opera-plugin-labels" aria-hidden="true">
-  <div className="opera-plugin-track">
-    {[
-      "Advanced AutoMod",
-      "Anchor",
-      "AutoMod",
-      "Birthday",
-      "Bulletin",
-      "Confessions",
-      "Economy",
-      "Games",
-      "Giveaway",
-      "Leveling",
-      "Logging",
-      "Moderation",
-      "Opera Assistant",
-      "Premium Tickets",
-      "Pressure",
-      "Reaction Roles",
-      "Robbery",
-      "Store",
-      "TCG",
-      "Tickets",
-      "Utility",
-      "Voice",
-      "Welcome",
-    ].map((plugin, index) => (
-      <div className="opera-plugin" key={`${plugin}-${index}`}>
-        <span className="opera-plugin-star">
-          {index % 4 === 2 ? "✧" : "✦"}
-        </span>
-        {plugin}
-      </div>
-    ))}
-  </div>
-</div>
-
-
         <div className="opera-scene-mascot">
           <OperaSpirit expression="curious" />
         </div>
