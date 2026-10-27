@@ -10,8 +10,7 @@ import {
 } from "@/app/data/plugin-details";
 
 const DISCORD_INSTALL_URL =
-    "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2833847071407158&integration_type=0&scope=applications.commands+bot";
-
+    "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2253294731390128&integration_type=0&scope=bot+applications.commands"
 function getPlugin(pluginId: string): Plugin | undefined {
     return plugins.find((plugin) => plugin.id === pluginId);
 }

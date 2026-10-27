@@ -21,8 +21,7 @@ const geistMono = Geist_Mono({
 
 const SITE_URL = "https://quill-and-ink-web.vercel.app";
 const EXPLORE_URL = `${SITE_URL}/explore`;
-const ADD_BOT_URL =
-  "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2833847071407158&integration_type=0&scope=applications.commands+bot";
+const ADD_BOT_URL = "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2253294731390128&integration_type=0&scope=bot+applications.commands"
 const SUPPORT_SERVER_URL = "https://discord.gg/3qbKqxBJDa";
 const VOTE_URL = "https://top.gg/bot/1535187211958489208#reviews";
 const PREVIEW_URL = `${SITE_URL}/og-preview-v2.gif`;
