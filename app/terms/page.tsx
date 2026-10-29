@@ -53,13 +53,13 @@ export default function TermsPage() {
       title: "5. Premium Services",
       paragraphs: [
         "Quill & Ink may offer paid Premium features for eligible Discord servers.",
-        "The current Premium price is ₹350 for 30 days of access.",
+        "The current Premium price is ₹350 / around $4 for 30 days of access.",
         "Premium access is associated with the applicable Discord server and is subject to successful payment verification, activation, and the availability of the relevant features.",
         "Premium does not automatically renew. If you want additional access after the purchased period expires, you must make another purchase through the Premium option in the bot's /setup command.",
         "Purchasing Premium does not give you ownership of Quill & Ink, its software, branding, infrastructure, or intellectual property.",
         "Premium features may be updated, changed, restricted, or discontinued when reasonably necessary. This does not remove any rights or remedies that cannot legally be excluded."
       ],
-      highlight: "₹350 for 30 days"
+      highlight: "₹350/~$4 for 30 days"
     },
     {
       title: "6. Payments",
@@ -211,7 +211,7 @@ export default function TermsPage() {
             </h1>
 
             <p className="mt-5 text-sm text-[#8198ad]">
-              Last Updated: October 12, 2026
+              Last Updated: October 29, 2026
             </p>
 
             <div className="mt-8 h-px bg-gradient-to-r from-[#69d9eb]/50 via-white/[0.08] to-transparent" />
@@ -228,7 +228,7 @@ export default function TermsPage() {
             <span className="font-semibold text-[#f1f8fa]">
               Using Premium?
             </span>{" "}
-            Premium currently costs ₹350 for 30 days and does not automatically
+            Premium currently costs ₹350 / around $4 for 30 days and does not automatically
             renew. Please review our{" "}
             <a
               href="/refunds"

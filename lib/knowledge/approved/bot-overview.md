@@ -66,7 +66,7 @@ For help that cannot be resolved from approved documentation, direct users to th
 https://discord.gg/3qbKqxBJDa
 
 ## Premium
-Quill & Ink Premium costs ₹350 for 30 days and does not automatically renew.
+Quill & Ink Premium costs ₹350 / around $4 for 30 days and does not automatically renew.
 
 Premium purchases are initiated through the bot in Discord. Run `/setup`, select the Premium option, and follow the instructions provided by the bot.
 

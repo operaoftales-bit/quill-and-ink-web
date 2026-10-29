@@ -164,7 +164,7 @@ export default function PrivacyPage() {
           </h1>
 
           <p className="mt-5 text-sm text-[#aebfce]">
-            Last Updated: October 12, 2026
+            Last Updated: October 29, 2026
           </p>
 
           <div className="mt-8 h-px w-full bg-gradient-to-r from-cyan-400/60 via-white/10 to-transparent" />

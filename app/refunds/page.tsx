@@ -12,7 +12,7 @@ export default function RefundsPage() {
       title: "2. Premium Access",
       paragraphs: [
         "Quill & Ink Premium is currently sold as a fixed-duration digital service.",
-        "₹350 for 30 days of Premium access.",
+        "₹350/~$4 for 30 days of Premium access.",
         "Premium access begins after the payment has been successfully verified and the purchase has been processed.",
         "Premium does not automatically renew. If you want additional Premium time after your current period ends, you must make another purchase through the Premium option in the bot's /setup command."
       ],
@@ -119,7 +119,7 @@ export default function RefundsPage() {
           </h1>
 
           <p className="mt-5 text-sm text-[#8198ad]">
-            Last Updated: October 12, 2026
+            Last Updated: October 29, 2026
           </p>
 
           <div className="mt-8 h-px bg-gradient-to-r from-transparent via-[#73d9eb]/40 to-transparent" />
@@ -135,7 +135,7 @@ export default function RefundsPage() {
             </p>
 
             <p className="mt-2 text-2xl font-semibold text-[#f7fbff]">
-              ₹350 <span className="text-base font-normal text-[#b9cbd9]">/ 30 days</span>
+              ₹350/~$4 <span className="text-base font-normal text-[#b9cbd9]">/ 30 days</span>
             </p>
 
             <p className="mt-2 text-sm leading-6 text-[#aebfce]">

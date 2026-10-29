@@ -155,7 +155,7 @@ export default function PricingPage() {
 
                 <div className="mt-8 flex items-baseline gap-2">
                   <span className="text-5xl font-semibold tracking-tight text-white sm:text-6xl">
-                    ₹350
+                    ₹350/~$4
                   </span>
                   <span className="text-sm text-slate-400">/ 30 days</span>
                 </div>
@@ -285,7 +285,7 @@ export default function PricingPage() {
               <li className="flex items-start gap-3">
                 <span className="mt-1 text-cyan-300">•</span>
                 <span>
-                  Premium is priced at ₹350 for a 30-day period.
+                  Premium is priced at ₹350/around $4 for a 30-day period.
                 </span>
               </li>
               <li className="flex items-start gap-3">

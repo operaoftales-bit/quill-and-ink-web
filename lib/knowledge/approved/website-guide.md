@@ -17,7 +17,7 @@ The plugin directory lets visitors browse available plugins and discover the fun
 Each plugin has a detail page associated with its plugin ID. Visitors can use these pages to learn more about individual plugins. Consult the actual plugin data and details for specific commands, requirements, and functionality.
 
 ### Pricing (`/pricing`)
-Explains the available Premium offering and pricing. Quill & Ink Premium costs ₹350 for 30 days and does not automatically renew. Premium purchases are made through the bot in Discord, not directly through the website.
+Explains the available Premium offering and pricing. Quill & Ink Premium costs ₹350 / around $4 for 30 days and does not automatically renew. Premium purchases are made through the bot in Discord, not directly through the website.
 
 To begin the Premium purchase process, run `/setup` in the Discord server, select the Premium option, and follow the instructions provided by the bot.
 

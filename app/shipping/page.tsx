@@ -87,7 +87,7 @@ export default function ShippingPage() {
           </h1>
 
           <p className="mt-5 text-sm text-[#8198ad]">
-            Last Updated: October 12, 2026
+            Last Updated: October 29, 2026
           </p>
 
           <div className="mt-8 h-px bg-gradient-to-r from-transparent via-[#73d9eb]/40 to-transparent" />

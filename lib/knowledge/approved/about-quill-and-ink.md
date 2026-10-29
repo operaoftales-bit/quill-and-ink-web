@@ -53,7 +53,7 @@ Premium unlocks access to Premium plugins and experiences. It does not mean that
 
 Premium is an optional purchase for communities that want access to additional Quill & Ink experiences.
 
-**Price:** ₹350 for 30 days.
+**Price:** ₹350 / around $4 for 30 days.
 
 Premium includes:
 - Access to Premium plugins and experiences.
@@ -125,7 +125,7 @@ When answering questions about Quill & Ink:
 - Explain the bot in terms of what it helps server owners and members accomplish.
 - Recommend plugins according to the user's actual needs, using the approved plugin documentation.
 - Apply the approved-file Premium classification rule exactly.
-- Explain the Premium price as ₹350 for 30 days, with no automatic renewal.
+- Explain the Premium price as ₹350 / around $4 for 30 days, with no automatic renewal.
 - Direct users to `/setup` for the Premium purchase option.
 - Use the official installation and support links supplied in this document.
 - Give precise commands and configuration instructions only when supported by the relevant approved plugin file.

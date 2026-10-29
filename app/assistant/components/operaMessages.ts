@@ -56,7 +56,7 @@ export const operaMessages: Record<OperaPage, OperaMessage[]> = {
 
   pricing: [
     { text: "Considering Premium? Let's see what comes with it!", expression: "curious" },
-    { text: "Premium is ₹350 for 30 days. No mysterious arithmetic!", expression: "winking" },
+    { text: "Premium is ₹350 around $4 for 30 days. No mysterious arithmetic!", expression: "winking" },
     { text: "Take your time. The best choice is an informed one.", expression: "relaxed" },
     { text: "No pressure! Your community, your pace.", expression: "relaxed" },
     { text: "A good plan should make sense before you choose it.", expression: "proud" },

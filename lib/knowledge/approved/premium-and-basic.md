@@ -26,7 +26,7 @@ Use the approved plugin information as the source of truth:
 Do not invent or infer access levels from a plugin's name. When answering questions about a specific plugin, check its approved knowledge file and the plugin index.
 
 ## Premium Price and Duration
-Quill & Ink Premium costs ₹350 for 30 days.
+Quill & Ink Premium costs ₹350 / around $4 for 30 days.
 
 The subscription does not automatically renew. Users should follow the purchase flow provided by the bot for the current purchase instructions.
 
