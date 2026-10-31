@@ -8,6 +8,7 @@ import OperaAssistant from "./assistant/components/OperaAssistant";
 
 import "./assistant/components/opera-animations.css";
 import "./assistant/components/opera-path.css";
+import Footer from "./components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -95,6 +96,12 @@ export const metadata: Metadata = {
 
   description:
     "Built for communities. Made for stories. A modular Discord bot for moderation, community, economy, games, and more.",
+  
+  icons: {
+    icon: "/images/quill-icon.png",
+    shortcut: "/images/quill-icon.png",
+    apple: "/images/quill-icon.png",
+  },
 
   openGraph: {
     type: "website",
@@ -147,6 +154,7 @@ export default function RootLayout({
 
         <div className="relative z-10 flex min-h-0 flex-1 flex-col">
           <PageTransition>{children}</PageTransition>
+          <Footer />
         </div>
 
         <OperaAssistant />

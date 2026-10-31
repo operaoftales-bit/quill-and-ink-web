@@ -5,7 +5,6 @@ const DISCORD_INSTALL_URL =
   "https://discord.com/oauth2/authorize?client_id=1535187211958489208&permissions=2253294731390128&integration_type=0&scope=bot+applications.commands"
   const DISCORD_SUPPORT_URL = "https://discord.gg/3qbKqxBJDa";
 
-
 function SectionHeading({
   eyebrow,
   title,

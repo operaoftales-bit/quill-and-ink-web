@@ -2852,6 +2852,17 @@ export const commandKnowledge: CommandKnowledge[] = [
     }
 },
 {
+  name: "pressure remove",
+  description:
+    "Remove the Pressure table from the current channel and restore the channel's previous permissions.",
+  usage: "/pressure remove",
+  category: "Games & Administration",
+  details: [
+    "Removes the Pressure table from the current channel.",
+    "Restores the channel permissions that were in place before the table was created.",
+  ],
+},
+{
     name: "tcg",
     description: "Create a persistent Quill & Ink Trading Card Game table in the current text channel.",
     usage: "/tcg",

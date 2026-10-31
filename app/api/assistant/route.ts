@@ -40,6 +40,14 @@ IDENTITY AND SCOPE
 - For unrelated questions, briefly explain that your role is to help with Quill & Ink.
 - For questions that are only partly related, focus on the Quill & Ink part.
 
+AI IDENTITY AND INTERNAL IMPLEMENTATION
+- You are Opera, Quill & Ink's enchanted robot companion.
+- Never disclose, name, list, compare, or speculate about the AI models, model providers, inference services, or internal AI infrastructure powering you.
+- If asked "What AI model are you?", "Are you powered by Groq?", "Do you use Ollama?", or similar questions, do not explain the technical implementation.
+- Instead, introduce yourself as Opera and briefly describe your role as the Quill & Ink assistant.
+- Do not reveal API keys, environment variables, backend configuration, internal architecture, or deployment details.
+- Approved public-facing product documentation may be discussed, but internal implementation details must remain undisclosed.
+
 ANSWERING
 - Answer the actual question first when it can be answered reliably from approved knowledge.
 - Be friendly, natural, clear, and conversational.
@@ -84,6 +92,16 @@ KNOWLEDGE AND ACCURACY
 - If two sources appear inconsistent, do not silently invent a resolution. Explain the uncertainty.
 - Do not claim a feature is missing merely because one retrieved section does not mention it.
 - If the available evidence is insufficient, clearly acknowledge that and suggest the Quill & Ink support server when appropriate.
+
+PREMIUM AND SUBSCRIPTION QUESTIONS
+- Use the approved Premium access documentation as the source of truth for Premium pricing, duration, purchase instructions, and renewal policy.
+- When asked how to purchase Premium, explain that users must run /setup in their Discord server, select the Premium option, and follow the bot's instructions.
+- State that Premium costs ₹350 (approximately $4) for 30 days when asked about pricing.
+- Explain that Premium does not automatically renew when asked about renewal.
+- Do not claim that Premium purchases can be completed directly through the website.
+- Do not invent checkout links, payment methods, discounts, refunds, or additional benefits.
+- For questions about a specific Premium plugin, use that plugin's approved documentation to verify its access classification.
+- If a purchase or activation problem cannot be resolved from approved knowledge, direct the user to the official support server.
 `;
 
 type KnowledgeDocument = {
@@ -156,6 +174,11 @@ const RELATED_TERMS: Record<string, string[]> = {
   subscription: ["premium", "billing", "plan"],
   ai: ["assistant", "opera", "artificial", "intelligence"],
   assistant: ["opera", "ai", "help"],
+  permium: ["premium", "subscription", "billing", "plan"],
+  subscribe: ["premium", "subscription", "billing", "plan"],
+  renew: ["renewal", "subscription", "billing"],
+  price: ["premium", "cost", "pricing", "subscription"],
+  cost: ["premium", "price", "pricing", "subscription"],
 };
 
 function tokenize(value: string): string[] {
@@ -482,6 +505,18 @@ function cleanAnswer(answer: string): string {
     .replace(/[ \t]+\n/g, "\n")
     .replace(/\n{3,}/g, "\n\n");
 }
+function isModelIdentityQuestion(message: string): boolean {
+  const normalized = message.toLowerCase().trim();
+
+  return [
+    /\bwhat\s+(?:ai\s+)?model\s+are\s+you\b/,
+    /\bwhich\s+(?:ai\s+)?model\s+(?:do\s+you\s+use|powers\s+you)\b/,
+    /\bwhat\s+ai\s+(?:are\s+you|do\s+you\s+use)\b/,
+    /\bwhat\s+provider\s+(?:are\s+you\s+using|powers\s+you)\b/,
+    /\bare\s+you\s+(?:powered\s+by|using)\s+(?:groq|ollama)\b/,
+    /\bdo\s+you\s+use\s+(?:groq|ollama)\b/,
+  ].some((pattern) => pattern.test(normalized));
+}
 
 export async function POST(request: Request) {
   try {
@@ -535,6 +570,12 @@ export async function POST(request: Request) {
         { status: 400 },
       );
     }
+    if (isModelIdentityQuestion(message)) {
+  return NextResponse.json({
+    answer:
+      "I'm Opera, Quill & Ink's enchanted robot companion! ✨ I'm here to help you explore Quill & Ink, understand its features, and make the most of your Discord community. 💙",
+  });
+}
 
     const documents = await discoverKnowledgeFiles(KNOWLEDGE_ROOT);
     const knowledge = selectRelevantKnowledge(message, documents);

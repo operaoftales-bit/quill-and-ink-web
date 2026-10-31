@@ -20,12 +20,40 @@ export type Plugin = {
   commands?: string[];
 };
 
+export type GlobalSystem = {
+  id: string;
+  name: string;
+  description: string;
+  tag: string;
+};
+// Global
+// Global is a category/core system, not a plugin.
+export const globalSystems: GlobalSystem[] = [
+  {
+    id: "global-collaboration",
+    name: "Global Collaboration",
+    description:
+      "Connect Quill & Ink servers through collaboration invitations, shared plans, and dedicated private communication channels.",
+    tag: "Collaboration",
+  },
+  {
+  id: "inkbank",
+  name: "InkBank",
+  description:
+    "A dedicated Nickel reserve for every Quill & Ink server, supporting member-based allocations and the server economy.",
+  tag: "Server Bank",
+},
+];
+
 export const categories = [
   {
     id: "community",
     name: "Community",
     description:
       "Features that help your community grow, engage, participate, and create experiences together.",
+      commands: [
+        "/collab",
+    ]
   },
   {
     id: "economy",

@@ -1,4 +1,3 @@
-
 export type PluginCommandDetail = {
     command: string;
     description: string;
@@ -39,19 +38,19 @@ export const pluginDetails: PluginDetail[] = [
             {
                 title: "Build reasons to return",
                 description:
-                    "Give members another reason to stay active and see their progress grow.",
+                    "Give members another reason to stay active and watch their progress grow.",
             },
         ],
         commands: [
             {
                 command: "/leveling preview",
                 description:
-                    "Previews the current level-up announcement configuration.",
+                    "Preview the current level-up announcement configuration.",
             },
             {
                 command: "/leveling image",
                 description:
-                    "Direct image URL displayed below the announcement text.",
+                    "Set the direct image URL displayed below the announcement text.",
             },
             {
                 command: "/leveling color",
@@ -61,17 +60,17 @@ export const pluginDetails: PluginDetail[] = [
             {
                 command: "/leveling message",
                 description:
-                    "Configure the message shown in level-up announcements.",
+                    "Configure the message displayed in level-up announcements.",
             },
             {
                 command: "/leveling thumbnail",
                 description:
-                    "Show the user's avatar as the embed thumbnail.",
+                    "Choose whether the user's avatar appears as the embed thumbnail.",
             },
             {
                 command: "/leveling channel",
                 description:
-                    "Choose the channel where leveling announcements should appear.",
+                    "Choose the channel where leveling announcements are sent.",
             },
             {
                 command: "/leveling enable",
@@ -86,22 +85,22 @@ export const pluginDetails: PluginDetail[] = [
             {
                 command: "/leveling title",
                 description:
-                    "Configure the title displayed on level-up announcements.",
+                    "Configure the title displayed in level-up announcements.",
             },
             {
                 command: "/leveling timestamp",
                 description:
-                    "Configure timestamp information shown on level-up announcements.",
+                    "Configure timestamp information shown in level-up announcements.",
             },
             {
                 command: "/leveling footer",
                 description:
-                    "Configure the footer displayed on level-up announcements.",
+                    "Configure the footer displayed in level-up announcements.",
             },
             {
                 command: "/levelroleconfig",
                 description:
-                    "Configure roles to be assigned when members reach certain levels.",
+                    "Configure roles assigned when members reach specific levels.",
             },
         ],
     },
@@ -121,7 +120,7 @@ export const pluginDetails: PluginDetail[] = [
             {
                 title: "Less manual work",
                 description:
-                    "Let Quill & Ink handle role assignment instead of relying on staff to manage every request.",
+                    "Let Quill & Ink handle role assignments instead of relying on staff to manage every request.",
             },
             {
                 title: "Community-controlled access",
@@ -133,7 +132,7 @@ export const pluginDetails: PluginDetail[] = [
             {
                 command: "/setreactionrole",
                 description:
-                    "Creates a reaction-role panel where you can configure role and their emoji.",
+                    "Create a reaction-role panel where roles and their corresponding emojis can be configured.",
             },
         ],
     },
@@ -143,7 +142,7 @@ export const pluginDetails: PluginDetail[] = [
         eyebrow: "COMMUNITY • WELCOME",
         headline: "Let your members feel their value.",
         introduction:
-            "Create welcome messages that make members feel noticed while giving your server a consistent way to announce arrivals.",
+            "Create welcome messages that make members feel noticed while giving your server a consistent way to announce new arrivals.",
         features: [
             {
                 title: "Welcome your members",
@@ -153,19 +152,19 @@ export const pluginDetails: PluginDetail[] = [
             {
                 title: "Keep members informed",
                 description:
-                    "Provide updates and information to members about new members.",
+                    "Keep your community updated whenever someone new joins.",
             },
             {
                 title: "Customize the experience",
                 description:
-                    "Configure, preview, and manage your welcome system from Discord.",
+                    "Configure, preview, and manage your welcome system directly from Discord.",
             },
         ],
         commands: [
             {
                 command: "/welcome message",
                 description:
-                    "Configure the welcome message used when a member joins.",
+                    "Configure the welcome message displayed when a member joins.",
             },
             {
                 command: "/welcome dmmessage",
@@ -232,7 +231,7 @@ export const pluginDetails: PluginDetail[] = [
             {
                 command: "/birthday config timezone",
                 description:
-                    "Configure the timezone used by your server so celebrations happen at the right time for members.",
+                    "Configure the timezone used by your server.",
             },
             {
                 command: "/birthday config view",
@@ -252,7 +251,7 @@ export const pluginDetails: PluginDetail[] = [
             {
                 command: "/birthday config role",
                 description:
-                    "Configure the role given to birthday members.",
+                    "Configure the role given to members on their birthdays.",
             },
             {
                 command: "/birthday config dm",
@@ -339,7 +338,7 @@ export const pluginDetails: PluginDetail[] = [
             {
                 title: "Reward participation",
                 description:
-                    "Choose how to reward members for participating in giveaways.",
+                    "Choose how members can qualify for giveaway participation rewards.",
             },
             {
                 title: "Keep the outcome flexible",
@@ -480,17 +479,17 @@ export const pluginDetails: PluginDetail[] = [
         eyebrow: "COMMUNITY • INTERACTIVE",
         headline: "Sometimes the biggest reward comes with a price.",
         introduction:
-            "A proper robbery system where members can attempt to rob others and steal other persons nickels with a built in police response so everyone stays safe.",
+            "A robbery system where members can attempt to steal Nickel from others, with a built-in police response that adds another layer of interaction.",
         features: [
             {
-                title: "Not a safe way to earn nickel",
+                title: "A risky way to earn Nickel",
                 description:
-                    "Give members chance to steal nickels from others.",
+                    "Give members the chance to steal Nickel from other members.",
             },
             {
                 title: "Police response",
                 description:
-                    "Built-in police response to robbery attempts which is assigned by Quill & Ink.",
+                    "Include a police response system assigned by Quill & Ink to handle robbery attempts.",
             },
             {
                 title: "A living economy game",
@@ -507,12 +506,12 @@ export const pluginDetails: PluginDetail[] = [
             {
                 command: "/policeconfig",
                 description:
-                    "Set the channel where police notifications will be sent.",
+                    "Set the channel where police notifications are sent.",
             },
             {
                 command: "/set-police",
                 description:
-                    "Assign a trusted member to save your members from robbers.",
+                    "Assign a trusted member to help protect your members from robbers.",
             },
         ],
     },
@@ -520,7 +519,7 @@ export const pluginDetails: PluginDetail[] = [
     {
         pluginId: "store",
         eyebrow: "COMMUNITY • STORE",
-        headline: "Give your community something to spend for.",
+        headline: "Give your community something to spend on.",
         introduction:
             "Create a server store where members can spend Nickel on configured items, with staff controls for managing the store.",
         features: [
@@ -554,7 +553,7 @@ export const pluginDetails: PluginDetail[] = [
             {
                 command: "/store recover",
                 description:
-                    "Recover the store configuration, while preserving existing items.",
+                    "Recover the store configuration while preserving existing items.",
             },
             {
                 command: "/store staff member-add",
@@ -663,25 +662,24 @@ export const pluginDetails: PluginDetail[] = [
         eyebrow: "COMMUNITY • AI ASSISTANT",
         headline: "Give your server a voice of its own.",
         introduction:
-  "Meet Opera Assistant, Quill & Ink's AI-powered Discord companion. She can respond conversationally using knowledge configured for your server, helping members get useful answers in a more personal way.",
-
-features: [
-  {
-    title: "Natural AI conversations",
-    description:
-      "Give members a conversational assistant that can respond to their questions start the conversation by saying 'Hey quill or Hey ink'.",
-  },
-  {
-    title: "Knowledge shaped by your server",
-    description:
-      "Add, retrieve, list, and remove server-specific knowledge used by the assistant.",
-  },
-  {
-    title: "A companion for your community",
-    description:
-      "Bring a more personal AI assistant experience into your Discord server.",
-  },
-],
+            "Meet Opera Assistant, Quill & Ink's AI-powered Discord companion. She can respond conversationally using knowledge configured for your server, helping members get useful answers in a more personal way.",
+        features: [
+            {
+                title: "Natural AI conversations",
+                description:
+                    "Give members a conversational assistant that can respond to their questions. Start a conversation by saying 'Hey Quill' or 'Hey Ink'.",
+            },
+            {
+                title: "Knowledge shaped by your server",
+                description:
+                    "Add, retrieve, list, and remove server-specific knowledge used by the assistant.",
+            },
+            {
+                title: "A companion for your community",
+                description:
+                    "Bring a more personal AI assistant experience into your Discord server.",
+            },
+        ],
         commands: [
             {
                 command: "/assistant-knowledge set",
@@ -711,7 +709,7 @@ features: [
         eyebrow: "ECONOMY • NICKEL",
         headline: "Give your community an economy worth living in.",
         introduction:
-            "Build a persistent server economy around Nickel, daily rewards, transfers, banking, and a secure place to store your wealth while managing resources as they are limited.",
+            "Build a persistent server economy around Nickel, daily rewards, transfers, banking, and a secure place to store your wealth. With resources that are limited, members have more reasons to manage their finances carefully.",
         features: [
             {
                 title: "Nickel for your community",
@@ -724,26 +722,26 @@ features: [
                     "Connect everyday earnings with banking and the wider Quill & Ink economy.",
             },
             {
-                title: "A stimulated economy where resources are limited so members can manage their resources",
+                title: "A living economy",
                 description:
-                    "Create an economy that can support rewards, stores, games, and other community systems.",
+                    "Create an economy that supports rewards, stores, games, and other community systems while encouraging members to manage limited resources.",
             },
         ],
         commands: [
             {
                 command: "/bankinfo",
                 description:
-                    "View information about the Ink bank where the server's economy reserve is viewed.",
+                    "View information about your server's InkBank and its available reserve.",
             },
             {
                 command: "/economy earn nickel",
                 description:
-                    "Manage or configure where nickels are earned.",
+                    "Manage or configure where Nickel can be earned.",
             },
             {
                 command: "/economy reset",
                 description:
-                    "Reset the server economy. Don't do this unless you know what you're doing.",
+                    "Reset the server economy. Use this only when you fully understand the consequences.",
             },
             {
                 command: "/daily",
@@ -758,12 +756,12 @@ features: [
             {
                 command: "/give",
                 description:
-                    "Give Nickel to member from the Ink bank itself.",
+                    "Give Nickel to a member using the server's InkBank.",
             },
             {
                 command: "/locker deposit",
                 description:
-                    "Deposit Nickel into the bank locker with interest and fixed deposits.",
+                    "Deposit Nickel into the bank locker, which supports interest and fixed deposits.",
             },
             {
                 command: "/locker withdraw",
@@ -778,9 +776,99 @@ features: [
             {
                 command: "/bank",
                 description:
-                    "A global wide nickel transfer where members can send nickels to others from different servers.",
+                    "Transfer Nickel between members across different servers.",
             },
         ],
+    },
+
+    // GLOBAL SYSTEMS — NOT PLUGINS
+
+    {
+        pluginId: "global-collaboration",
+        eyebrow: "GLOBAL • COLLABORATION",
+        headline: "Bring communities together, one collaboration at a time.",
+        introduction:
+            "Connect different Quill & Ink servers through organised collaborations. Create an invitation, share your plans, welcome participating communities, and communicate through dedicated private channels.",
+        features: [
+            {
+                title: "Create collaboration invitations",
+                description:
+                    "Publish an invitation describing your server, the purpose of the collaboration, your plan, duration, prize or reward, and expected contribution.",
+            },
+            {
+                title: "Choose your collaboration limits",
+                description:
+                    "Set an invitation expiry period and the maximum number of participating servers.",
+            },
+            {
+                title: "Controlled participation",
+                description:
+                    "Server administrators and members with Manage Server permission can create and join collaboration invitations on behalf of their servers.",
+            },
+            {
+                title: "Dedicated private channels",
+                description:
+                    "Participating servers receive private collaboration channels where authorised participants can communicate.",
+            },
+            {
+                title: "Cross-server communication",
+                description:
+                    "Messages sent in an active collaboration channel are relayed to the other participating servers, making coordination easier.",
+            },
+            {
+                title: "Time-limited invitations",
+                description:
+                    "Invitations automatically expire when their configured expiry time is reached. Expired invitations can no longer accept participants.",
+            },
+        ],
+        commands: [
+            {
+                command: "/collab",
+                description:
+                    "Create and publish a collaboration invitation. Configure the server name, description, purpose, plan, duration, prize, contribution, expiry period, and maximum participating servers.",
+            },
+        ],
+    },
+
+    {
+        pluginId: "inkbank",
+        eyebrow: "GLOBAL • SERVER ECONOMY",
+        headline: "Every community has a reserve of its own.",
+        introduction:
+            "Every Quill & Ink server has its own InkBank, providing a shared reserve for that server's economy. InkBank does not independently mint Nickel. Its allocations are funded through the shared Quill Bank, which uses its existing reserves first and covers any shortfall before the Nickel is allocated.",
+        features: [
+            {
+                title: "A dedicated reserve for every server",
+                description:
+                    "Each server receives its own InkBank, keeping its economy reserve separate from the reserves of other servers.",
+            },
+            {
+                title: "Member-based allocation",
+                description:
+                    "When a server is initially funded, its allocation is based on its current membership. For each member, the allocation is 10,000 Nickel.",
+            },
+            {
+                title: "New members contribute to the reserve",
+                description:
+                    "When a new member joins a server, 10,000 Nickel is allocated to that server's InkBank through the shared Quill Bank.",
+            },
+            {
+                title: "Departures return Nickel",
+                description:
+                    "When a member leaves, up to 10,000 Nickel is returned from the server's InkBank to the shared Quill Bank. If the InkBank cannot provide the full amount, the remaining return is tracked separately.",
+            },
+            {
+                title: "A recovery period for returning members",
+                description:
+                    "A departed member's eligible wallet and locker balances are preserved for three months. If they return within that period, those balances can be restored.",
+            },
+            {
+                title: "Unclaimed funds return to the shared reserve",
+                description:
+                    "After the three-month recovery period, unclaimed departed-member wallet and locker funds expire and return to the Quill Bank.",
+            },
+        ],
+        commands: [],
     },
 
     {
@@ -866,7 +954,7 @@ features: [
             {
                 title: "Keep a clear record",
                 description:
-                    "Use cases, warnings, and moderation logs to keep staff actions organized.",
+                    "Use cases, warnings, and moderation logs to keep staff actions organised.",
             },
             {
                 title: "Control your server",
@@ -953,7 +1041,7 @@ features: [
         eyebrow: "MODERATION • SUPPORT",
         headline: "Give every problem a proper door.",
         introduction:
-            "A simple support ticket system that gives members a private way to ask for help while keeping the process organized for staff.",
+            "A simple support ticket system that gives members a private way to ask for help while keeping the process organised for staff.",
         features: [
             {
                 title: "Private support",
@@ -995,7 +1083,7 @@ features: [
             {
                 title: "Structured support",
                 description:
-                    "Organize support around configurable ticket categories.",
+                    "Organise support around configurable ticket categories.",
             },
             {
                 title: "Flexible staff access",
@@ -1012,7 +1100,7 @@ features: [
             {
                 command: "/premium-ticket setup",
                 description:
-                    "Set up the channel where premium tickets panel is created.",
+                    "Set up the channel where the Premium Tickets panel is created.",
             },
             {
                 command: "/premium-ticket category add",
@@ -1124,19 +1212,19 @@ features: [
             {
                 title: "Play inside Discord",
                 description:
-                    "A presistant table in text channel where all are locked out except the players creating a complete game table.",
+                    "Create a persistent game table in a text channel, with access restricted to the participating players.",
             },
         ],
         commands: [
             {
                 command: "/pressure",
                 description:
-                    "Create a presistant table in the text channel where players can join.",
+                    "Create a persistent table in a text channel where players can join.",
             },
             {
                 command: "/pressure remove",
                 description:
-                    "Remove a presistant table in the text channel.",
+                    "Remove a persistent table from a text channel.",
             },
         ],
     },
@@ -1151,17 +1239,17 @@ features: [
             {
                 title: "Temporary voice spaces",
                 description:
-                    "Why creating many voice channels when you can only have one.",
+                    "Instead of creating many permanent voice channels, let members create temporary ones when needed.",
             },
             {
                 title: "Simple member experience",
                 description:
-                    "Let members create a temporary voice space when they need one.",
+                    "Let members create a temporary voice space whenever they need one.",
             },
             {
                 title: "Keep voice channels flexible",
                 description:
-                    "Just create one voice channel named 'Create Voice Channel' and let the Quill & Ink manage it.",
+                    "Create one voice channel named 'Create Voice Channel' and let Quill & Ink manage the temporary channels.",
             },
         ],
         commands: [],

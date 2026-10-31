@@ -7,7 +7,13 @@ import {
   type SyntheticEvent,
 } from "react";
 import Link from "next/link";
-import { categories, plugins, type Plugin } from "@/app/data/plugins";
+import {
+  categories,
+  plugins,
+  globalSystems,
+  type Plugin,
+  type GlobalSystem,
+} from "@/app/data/plugins";
 import { commandKnowledge } from "@/app/data/commandKnowledge";
 
 type DemoMessage = {
@@ -165,6 +171,113 @@ function PluginCard({
                   <span aria-hidden="true">→</span>
                 </Link>
               )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function GlobalSystemCard({
+  system,
+  expanded,
+  onToggle,
+}: {
+  system: GlobalSystem;
+  expanded: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <article
+      className={`group relative mb-3 inline-block w-full break-inside-avoid overflow-hidden rounded-2xl border align-top backdrop-blur-xl transition-[border-color,box-shadow,background-color] duration-300 ${
+        expanded
+          ? "border-[#d0b16b]/30 bg-[#071827]/90 shadow-[0_12px_40px_rgba(0,0,0,0.22),0_0_24px_rgba(208,177,107,0.025)]"
+          : "border-[#6d89a3]/15 bg-[#071827]/75 hover:border-[#d0b16b]/25 hover:shadow-[0_8px_30px_rgba(0,0,0,0.18)]"
+      }`}
+    >
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute -right-16 -top-20 h-36 w-36 rounded-full bg-[#d0b16b]/[0.07] blur-3xl transition-opacity duration-500 ${
+          expanded ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+        }`}
+      />
+
+      <button
+        type="button"
+        aria-expanded={expanded}
+        onClick={onToggle}
+        className="relative flex w-full items-center gap-3 px-4 py-3.5 text-left sm:px-5"
+      >
+        <span className="min-w-0 flex-1">
+          <span className="block truncate text-base font-semibold tracking-[-0.015em] text-[#f1f7ff] transition-colors duration-300 group-hover:text-[#d0b16b]">
+            {system.name}
+          </span>
+
+          <span className="mt-1.5 flex flex-wrap items-center gap-1.5">
+            <span className="rounded-full border border-[#d0b16b]/25 bg-[#d0b16b]/[0.07] px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.1em] text-[#d0b16b]">
+              {system.tag}
+            </span>
+
+            <span className="rounded-full border border-[#6d89a3]/20 bg-[#6d89a3]/[0.05] px-2 py-0.5 text-[9px] font-medium uppercase tracking-[0.1em] text-[#91aabd]">
+              Global System
+            </span>
+          </span>
+        </span>
+
+        <span
+          aria-hidden="true"
+          className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border transition-all duration-300 ${
+            expanded
+              ? "rotate-180 border-[#d0b16b]/30 bg-[#d0b16b]/[0.08] text-[#d0b16b]"
+              : "border-[#6d89a3]/20 text-[#8198aa] group-hover:border-[#d0b16b]/25 group-hover:text-[#d0b16b]"
+          }`}
+        >
+          <svg viewBox="0 0 20 20" fill="none" className="h-4 w-4">
+            <path
+              d="m5 7.5 5 5 5-5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </span>
+      </button>
+
+      <div
+        className={`grid transition-[grid-template-rows,opacity] duration-300 ease-in-out ${
+          expanded
+            ? "grid-rows-[1fr] opacity-100"
+            : "grid-rows-[0fr] opacity-0"
+        }`}
+        aria-hidden={!expanded}
+      >
+        <div className="overflow-hidden">
+          <div className="mx-4 border-t border-[#6d89a3]/15 sm:mx-5" />
+
+          <div className="relative px-4 pb-4 pt-3.5 sm:px-5">
+            <p className="text-sm leading-6 text-[#91aabd]">
+              {system.description}
+            </p>
+
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+              <span className="inline-flex items-center gap-2 text-xs text-[#91aabd]">
+                <span
+                  aria-hidden="true"
+                  className="h-1.5 w-1.5 rounded-full bg-[#d0b16b]"
+                />
+                Explore this system
+              </span>
+
+              <Link
+                href={`/docs/${system.id}`}
+                tabIndex={expanded ? 0 : -1}
+                className="inline-flex items-center gap-2 rounded-full border border-[#d0b16b]/25 bg-[#d0b16b]/[0.06] px-4 py-2 text-xs font-semibold text-[#d0b16b] transition-all duration-300 hover:border-[#73d9eb]/40 hover:bg-[#73d9eb]/[0.08] hover:text-[#73d9eb]"
+              >
+                Read documentation
+                <span aria-hidden="true">→</span>
+              </Link>
             </div>
           </div>
         </div>
@@ -845,25 +958,13 @@ function CommandPlayground() {
   );
 }
 
-function GlobalSection() {
-  const items = [
-    {
-      title: "Shared Foundation",
-      description:
-        "Core systems that provide the foundation used by Quill & Ink across its different modules.",
-    },
-    {
-      title: "Connected Systems",
-      description:
-        "Community, economy, and moderation experiences are designed to work together rather than feel isolated.",
-    },
-    {
-      title: "Consistent Experience",
-      description:
-        "Persistent configuration and shared systems help Quill & Ink remain familiar as your server grows.",
-    },
-  ];
-
+function GlobalSection({
+  expandedSystemId,
+  onToggle,
+}: {
+  expandedSystemId: string | null;
+  onToggle: (systemId: string) => void;
+}) {
   return (
     <section>
       <div className="mb-6">
@@ -877,32 +978,23 @@ function GlobalSection() {
 
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[#f4f8ff] sm:text-3xl">
-            The foundation beneath Quill & Ink.
+            Beyond individual servers.
           </h2>
           <p className="mt-3 text-sm leading-6 text-[#91aabd]">
-            Global systems provide the shared foundation that allows Quill &
-            Ink&apos;s different experiences to work together consistently
-            across your server.
+            Discover the systems that connect your server to the wider
+            Quill & Ink experience.
           </p>
         </div>
       </div>
 
-      <div className="grid gap-3 md:grid-cols-3">
-        {items.map((item) => (
-          <div
-            key={item.title}
-            className="relative overflow-hidden rounded-2xl border border-[#6d89a3]/15 bg-[#071827]/75 p-5 backdrop-blur-xl"
-          >
-            <p className="text-[10px] font-medium uppercase tracking-[0.25em] text-[#73d9eb]">
-              Global System
-            </p>
-            <h3 className="mt-3 text-base font-semibold text-[#f1f7ff]">
-              {item.title}
-            </h3>
-            <p className="mt-2 text-sm leading-6 text-[#91aabd]">
-              {item.description}
-            </p>
-          </div>
+      <div className="columns-1 gap-3 sm:columns-2 sm:gap-4">
+        {globalSystems.map((system) => (
+          <GlobalSystemCard
+            key={system.id}
+            system={system}
+            expanded={expandedSystemId === system.id}
+            onToggle={() => onToggle(system.id)}
+          />
         ))}
       </div>
     </section>
@@ -911,6 +1003,10 @@ function GlobalSection() {
 
 export default function ExplorePage() {
   const [expandedPluginId, setExpandedPluginId] = useState<string | null>(
+    null,
+  );
+
+  const [expandedSystemId, setExpandedSystemId] = useState<string | null>(
     null,
   );
 
@@ -932,18 +1028,21 @@ export default function ExplorePage() {
             Explore
             <span className="absolute -bottom-2 left-0 h-px w-full bg-gradient-to-r from-transparent via-[#d0b16b]/70 to-transparent" />
           </Link>
+
           <Link
             href="/pricing"
             className="transition duration-300 hover:text-[#d0b16b]"
           >
             Pricing
           </Link>
+
           <Link
             href="/about"
             className="transition duration-300 hover:text-[#d0b16b]"
           >
             About
           </Link>
+
           <Link
             href="/contact"
             className="transition duration-300 hover:text-[#d0b16b]"
@@ -965,18 +1064,22 @@ export default function ExplorePage() {
         <div className="mx-auto max-w-4xl">
           <div className="mb-4 flex items-center justify-center gap-4">
             <span className="h-px w-10 bg-gradient-to-r from-transparent to-[#d0b16b]/40" />
+
             <span className="text-[10px] font-medium uppercase tracking-[0.4em] text-[#d0b16b]">
               The Collection
             </span>
+
             <span className="h-px w-10 bg-gradient-to-l from-transparent to-[#d0b16b]/40" />
           </div>
 
           <p className="text-xs font-medium uppercase tracking-[0.3em] text-[#73d9eb]/90">
             Explore Quill & Ink
           </p>
+
           <h1 className="mt-4 text-4xl font-semibold tracking-[-0.03em] text-[#f4f8ff] sm:text-5xl">
             Tools for communities.
           </h1>
+
           <p className="mx-auto mt-5 max-w-2xl text-sm leading-7 text-[#91aabd] sm:text-base">
             Discover the systems, tools, and experiences that make up Quill &
             Ink. Start with the essentials, then explore what your community
@@ -993,7 +1096,17 @@ export default function ExplorePage() {
         <div className="mx-auto max-w-6xl space-y-12">
           {categories.map((category) => {
             if (category.id === "global") {
-              return <GlobalSection key={category.id} />;
+              return (
+                <GlobalSection
+                  key={category.id}
+                  expandedSystemId={expandedSystemId}
+                  onToggle={(systemId) =>
+                    setExpandedSystemId((current) =>
+                      current === systemId ? null : systemId,
+                    )
+                  }
+                />
+              );
             }
 
             const categoryPlugins = plugins.filter(
@@ -1005,9 +1118,11 @@ export default function ExplorePage() {
                 <div className="mb-6">
                   <div className="mb-4 flex items-center gap-4">
                     <div className="h-px flex-1 bg-gradient-to-r from-transparent to-[#6d89a3]/15" />
+
                     <span className="text-[10px] uppercase tracking-[0.28em] text-[#718ba1]">
                       {category.name}
                     </span>
+
                     <div className="h-px flex-1 bg-gradient-to-l from-transparent to-[#6d89a3]/15" />
                   </div>
 
@@ -1015,6 +1130,7 @@ export default function ExplorePage() {
                     <h2 className="text-2xl font-semibold tracking-[-0.02em] text-[#f4f8ff] sm:text-3xl">
                       {category.name}
                     </h2>
+
                     <p className="mt-3 text-sm leading-6 text-[#91aabd]">
                       {category.description}
                     </p>
@@ -1047,13 +1163,16 @@ export default function ExplorePage() {
           <p className="text-[10px] font-medium uppercase tracking-[0.32em] text-[#d0b16b]">
             Quill & Ink Premium
           </p>
+
           <h2 className="mx-auto mt-3 max-w-2xl text-2xl font-semibold tracking-tight text-[#f4f8ff] sm:text-3xl">
             More experiences. More possibilities.
           </h2>
+
           <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-[#91aabd]">
             Premium plugins are marked throughout the collection. Learn what
             Premium includes and how it works on the pricing page.
           </p>
+
           <Link
             href="/pricing"
             className="mt-6 inline-flex rounded-full bg-[#d0b16b] px-6 py-3 text-sm font-semibold text-[#061525] transition hover:bg-[#e5c980]"
@@ -1071,12 +1190,15 @@ export default function ExplorePage() {
             <span className="text-xs text-[#d0b16b]/60">✦</span>
             <span className="h-px w-14 bg-gradient-to-l from-transparent to-[#73d9eb]/20" />
           </div>
+
           <p className="text-[10px] font-medium uppercase tracking-[0.3em] text-[#d0b16b]">
             Made to grow
           </p>
+
           <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[#f4f8ff] sm:text-3xl">
             More is always being written.
           </h2>
+
           <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-[#91aabd]">
             Quill & Ink is designed to grow with the communities that use it.
             New tools and experiences can become part of the collection over
@@ -1092,6 +1214,7 @@ export default function ExplorePage() {
             <p className="font-semibold tracking-wide text-[#dce8ef]">
               Quill & Ink
             </p>
+
             <p className="mt-1">Built for communities. Made for stories.</p>
           </div>
 
@@ -1102,24 +1225,28 @@ export default function ExplorePage() {
             >
               About
             </Link>
+
             <Link
               href="/pricing"
               className="transition duration-300 hover:text-[#d0b16b]"
             >
               Pricing
             </Link>
+
             <Link
               href="/contact"
               className="transition duration-300 hover:text-[#d0b16b]"
             >
               Contact
             </Link>
+
             <Link
               href="/privacy"
               className="transition duration-300 hover:text-[#d0b16b]"
             >
               Privacy
             </Link>
+
             <Link
               href="/terms"
               className="transition duration-300 hover:text-[#d0b16b]"
