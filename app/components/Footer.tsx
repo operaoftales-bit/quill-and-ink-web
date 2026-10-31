@@ -17,7 +17,6 @@ const footerGroups = [
       { label: "Documentation", href: "/docs" },
       { label: "Getting Started", href: "/docs/getting-started" },
       { label: "Commands", href: "/docs/commands" },
-      { label: "FAQ", href: "/docs/faq" },
     ],
   },
   {

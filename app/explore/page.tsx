@@ -178,7 +178,6 @@ function PluginCard({
     </article>
   );
 }
-
 function GlobalSystemCard({
   system,
   expanded,
@@ -188,6 +187,69 @@ function GlobalSystemCard({
   expanded: boolean;
   onToggle: () => void;
 }) {
+  const systemDetails: Record<
+    string,
+    {
+      introduction: string;
+      sections: { title: string; description: string }[];
+      note?: string;
+    }
+  > = {
+    "global-collaboration": {
+      introduction:
+        "Global Collaboration connects participating Discord communities, allowing their members to communicate across different servers through shared channels.",
+      sections: [
+        {
+          title: "Create an invitation",
+          description:
+            "A community can create an invitation to open its Global Collaboration channel to other participating servers.",
+        },
+        {
+          title: "Connect with other communities",
+          description:
+            "Other communities can join through an available invitation, bringing their own members into the shared experience.",
+        },
+        {
+          title: "Stay connected",
+          description:
+            "Once connected, participating communities can communicate through their shared Global Collaboration channels.",
+        },
+        {
+          title: "Relay messages",
+          description:
+            "Messages sent through the connected channels are relayed between participating communities, helping conversations reach beyond individual servers.",
+        },
+      ],
+      note:
+        "Global Collaboration relays text messages only. Attachments and embeds are not relayed.",
+    },
+    inkbank: {
+      introduction:
+        "InkBank is a shared community fund that gives participating servers a way to support their members through a collective allocation.",
+      sections: [
+        {
+          title: "Community allocation",
+          description:
+            "When a member joins, the server can receive an allocation of up to 10,000 Nickel for that member.",
+        },
+        {
+          title: "Returning allocations",
+          description:
+            "When a member leaves, their allocated amount is returned to the community fund.",
+        },
+        {
+          title: "Managing shortfalls",
+          description:
+            "If the available fund cannot cover an allocation, the remaining shortfall is tracked rather than silently creating additional funds.",
+        },
+      ],
+      note:
+        "InkBank allocations are not newly created Nickel. They come from the community's available fund.",
+    },
+  };
+
+  const details = systemDetails[system.id];
+
   return (
     <article
       className={`group relative mb-3 inline-block w-full break-inside-avoid overflow-hidden rounded-2xl border align-top backdrop-blur-xl transition-[border-color,box-shadow,background-color] duration-300 ${
@@ -258,27 +320,36 @@ function GlobalSystemCard({
 
           <div className="relative px-4 pb-4 pt-3.5 sm:px-5">
             <p className="text-sm leading-6 text-[#91aabd]">
-              {system.description}
+              {details?.introduction ?? system.description}
             </p>
 
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-              <span className="inline-flex items-center gap-2 text-xs text-[#91aabd]">
-                <span
-                  aria-hidden="true"
-                  className="h-1.5 w-1.5 rounded-full bg-[#d0b16b]"
-                />
-                Explore this system
-              </span>
+            {details?.sections.map((section, index) => (
+              <div key={section.title} className="mt-4">
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-semibold text-[#d0b16b]">
+                    0{index + 1}
+                  </span>
+                  <h3 className="text-sm font-semibold text-[#e5edf5]">
+                    {section.title}
+                  </h3>
+                </div>
 
-              <Link
-                href={`/docs/${system.id}`}
-                tabIndex={expanded ? 0 : -1}
-                className="inline-flex items-center gap-2 rounded-full border border-[#d0b16b]/25 bg-[#d0b16b]/[0.06] px-4 py-2 text-xs font-semibold text-[#d0b16b] transition-all duration-300 hover:border-[#73d9eb]/40 hover:bg-[#73d9eb]/[0.08] hover:text-[#73d9eb]"
-              >
-                Read documentation
-                <span aria-hidden="true">→</span>
-              </Link>
-            </div>
+                <p className="mt-1.5 text-sm leading-6 text-[#91aabd]">
+                  {section.description}
+                </p>
+              </div>
+            ))}
+
+            {details?.note && (
+              <div className="mt-5 rounded-xl border border-[#d0b16b]/15 bg-[#d0b16b]/[0.045] px-3.5 py-3">
+                <p className="text-xs leading-5 text-[#b9a77e]">
+                  <span className="font-semibold text-[#d0b16b]">
+                    Important:
+                  </span>{" "}
+                  {details.note}
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>
