@@ -3,15 +3,15 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   async rewrites() {
-    const voroaBackend = (
-      process.env.VOROA_BACKEND_URL ??
-      "https://quill-and-ink-twin-web.getvoroa.com"
+    const cloudflareBackend = (
+      process.env.CLOUDFLARE_BACKEND_URL ??
+      "https://quill-webservice.operaoftales.workers.dev"
     ).replace(/\/+$/, "");
 
     return [
       {
         source: "/premium/checkout/:path*",
-        destination: `${voroaBackend}/premium/checkout/:path*`,
+        destination: `${cloudflareBackend}/premium/checkout/:path*`,
       },
     ];
   },
