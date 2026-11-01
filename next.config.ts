@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     const cloudflareBackend = (
       process.env.CLOUDFLARE_BACKEND_URL ??
-      "https://quill-webservice.operaoftales.workers.dev"
+      "https://quill-and-ink-payments.operaoftales.workers.dev"
     ).replace(/\/+$/, "");
 
     return [
